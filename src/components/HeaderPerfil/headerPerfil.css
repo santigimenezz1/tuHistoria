@@ -1,0 +1,21 @@
+.container__headerPerfil{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    gap: 15px;
+   
+}
+.headerPerfil{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
+.headerPerfil__info{
+    color: white;
+}
+.container__modales{
+    display: flex;
+    gap: 10px;
+}

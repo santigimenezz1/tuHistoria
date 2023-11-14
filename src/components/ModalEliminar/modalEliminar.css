@@ -1,0 +1,52 @@
+.container__modalEditar{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: auto;
+    background-color: rgba(0, 0, 0, 0.607);
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* El valor 24 en boxShadow se convierte en una sombra con radio de 24px */
+    padding: 16px; /* p: 4 se convierte en padding de 16px (4 * 4) */
+    border-radius: 10px;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+.formulario__modalEditar{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.input__file{
+padding: 10px;
+cursor: pointer;
+border: 1px solid white;
+border-radius: 7px;
+
+}
+.input__text{
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    border-radius: 7px;
+border: 1px solid white; 
+}
+.container__modalEditar__iconoClose{
+    width: 30px;
+    position: absolute;
+    top:  2%;
+    right: 0%;
+    cursor: pointer;
+}
+
+.container__buttonsForm{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 5px;
+    padding: 15px;
+}

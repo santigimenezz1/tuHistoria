@@ -1,0 +1,12 @@
+.headerPerfil__email{
+    color: white;
+    font-size: 8px;
+   }
+
+   .headerPerfil__email h1{
+    border: 2px solid white;
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+   }
+   
