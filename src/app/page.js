@@ -4,7 +4,6 @@ import ModalCrearSueño from '@/components/ModalCrearSueño/ModalCrearSueño'
 import TarjetaHistoria from '@/components/TarjetaHistoria/TarjetaHistoria'
 import TarjetaEnlaceHome from '@/components/TarjetaEnlaceHome/TarjetaEnlaceHome'
 import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
-
 export default function Home() {
   return (
     <div className='container__home'>
