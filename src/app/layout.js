@@ -3,6 +3,7 @@ import './globals.css'
 import BotonEnlace from '@/components/BotonEnlace/BotonEnlace'
 import Link from 'next/link'
 import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
+import TarjetaFiltro from '@/components/TarjetaFiltro/TarjetaFiltro'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,18 +18,19 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <div className='container__app'>
         <nav className='navBar'>
-          <Link href={'/'}>
-          <BotonEnlace text={"Home"} />
-          </Link>
-          <Link href={'/perfil'}>
-          <BotonEnlace text={"Perfil"} />
-          </Link>
-          <Link href={'/misSuenios'}>
-          <BotonEnlace text={"Mis sueños"} />
-          </Link>
-          <Link href={'/favoritos'}>
-          <BotonEnlace text={"Mis favoritos"} />
-          </Link>
+        <h1>Filtrá tu búsqueda</h1>
+        <div className='navBar__tarjetas'>
+        <TarjetaFiltro text={"Caía"} />
+        <TarjetaFiltro text={"Me perseguían"} />
+        <TarjetaFiltro text={"Me moría"} />
+        <TarjetaFiltro text={"Con un fantasma"} />
+        <TarjetaFiltro text={"Ovinis"} />
+        <TarjetaFiltro text={"Extraterrestes"} />
+        <TarjetaFiltro text={"Volaba"} />
+        <TarjetaFiltro text={"Era otra persona"} />
+        <TarjetaFiltro text={"Me peleaba"} />
+        </div>
+
         </nav>
         <main className='main'>
         {children}

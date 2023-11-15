@@ -1,7 +1,7 @@
  import '../TarjetaHistoria/tarjetaHistoria.css'
 import BotonClose from './BotonClose/BotonClose'
 import BotonEditar from './BotonEditar/BotonEditar'
-const TarjetaHistoria = ()=>{
+const TarjetaHistoria = ( {text} )=>{
     return (
         <div className="tarjetaHistoria">
             <div className='tarjetaHistoria__user'>
@@ -18,9 +18,7 @@ const TarjetaHistoria = ()=>{
                 </div>
             </div>
                 <div className='tarjetaHistoria__mensaje'>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, nostrum? Officiis ipsam nisi maxime cupiditate quisquam assumenda nam mollitia perspiciatis quis saepe sapiente, fuga ex recusandae repellendus nihil, vitae minus.
-                    Quo adipisci vero doloremque atque, maxime corporis dolor autem iure qui suscipit modi neque laudantium aut quas nemo! Quos reiciendis placeat ut delectus non veniam ex eligendi possimus ea ipsa.
-                    </span>
+                    <span>{text}</span>
 
                 </div>
 

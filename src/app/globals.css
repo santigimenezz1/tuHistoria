@@ -13,10 +13,17 @@ body{
 .navBar{
   width: 25%;
   height: 100%;
+  color: white;
+  padding-top: 95px;
+  padding-left: 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  gap: 10px;
+}
+.navBar__tarjetas{
+  width: 75%;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
 }
 .container__app{

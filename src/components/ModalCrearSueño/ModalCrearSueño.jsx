@@ -11,6 +11,7 @@ import BotonModalEditar from '../BotonModalEditar/BotonModalEditar';
 import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
 import BotonCrearCuenta from '../BotonCrearTarea/BotonCrearTarea';
+import TarjetaFiltro from '../TarjetaFiltro/TarjetaFiltro';
 
 const style = {
   position: 'absolute',
@@ -34,7 +35,7 @@ const StyledTextField = styled(TextField)({
         borderColor: 'white',  // Color del borde al pasar el ratón
       },
       '&.Mui-focused fieldset': {
-        borderColor: 'purple',  // Color del borde cuando está enfocado
+        borderColor: 'white',  // Color del borde cuando está enfocado
       },
     },
     '& .MuiInputLabel-root': {
@@ -70,15 +71,26 @@ export default function ModalCrearSueño() {
           </Typography>
        
           <form className='formulario__modalEditar'>
-            <h5>Soñé que...</h5>
             <StyledTextField
       multiline
       minRows={3}
       maxRows={6}
       fullWidth
       variant="outlined"
+      placeholder='Soñé que...'
     />
  <FormControl>
+  <h3>Elige alguna categoría</h3>
+  <div className='tarjetas__filtro'>
+  <TarjetaFiltro text={"Caía"} />
+  <TarjetaFiltro text={"Volaba"} />
+  <TarjetaFiltro text={"Me perseguían"} />
+  <TarjetaFiltro text={"Era otra persona"} />
+  <TarjetaFiltro text={"Peleaba"} />
+  <TarjetaFiltro text={"Veía un muerto"} />
+  </div>
+
+
   <FormLabel id="demo-radio-buttons-group-label">Quieres que sea..</FormLabel>
   <RadioGroup
     aria-labelledby="demo-radio-buttons-group-label"
