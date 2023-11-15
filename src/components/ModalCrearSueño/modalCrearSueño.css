@@ -1,9 +1,9 @@
-.container__modalEditar{
+.container__modalCrearSueño{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
+    width: 600px;
     height: auto;
     background-color: rgba(0, 0, 0, 0.607);
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.5); /* El valor 24 en boxShadow se convierte en una sombra con radio de 24px */
@@ -16,6 +16,7 @@
     gap: 10px;
     position: relative;
     border: 2px solid white;
+
 }
 .formulario__modalEditar{
     display: flex;
@@ -46,8 +47,11 @@ border: 1px solid white;
 
 .container__buttonsForm{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     gap: 10px;
     margin: 5px;
-    padding: 15px;
+}
+
+.input__fileCrear{
+    height: 150px;
 }

@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import BotonEnlace from '@/components/BotonEnlace/BotonEnlace'
 import Link from 'next/link'
+import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
 
 const inter = Inter({ subsets: ['latin'] })
 

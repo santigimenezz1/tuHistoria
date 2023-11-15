@@ -1,0 +1,16 @@
+.botonCrearCuenta button{
+ width: 700px;
+ color: white;
+ letter-spacing: 2px;
+ background-color: rgba(59,130,246,.5);
+ height: 50px;
+ border-radius: 10px;
+ cursor: pointer;
+ border: none;
+ transition: all .2s ;
+ border: 2px solid black ;
+
+}
+.botonCrearCuenta button:hover{
+  border: 2px solid white;
+   }
