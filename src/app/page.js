@@ -4,13 +4,14 @@ import ModalCrearSueño from '@/components/ModalCrearSueño/ModalCrearSueño'
 import TarjetaHistoria from '@/components/TarjetaHistoria/TarjetaHistoria'
 import TarjetaEnlaceHome from '@/components/TarjetaEnlaceHome/TarjetaEnlaceHome'
 import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
+import Link from 'next/link'
 export default function Home() {
   return (
     <div className='container__home'>
-  <div className='home__tarjetas'>
     <div className='fondoDinamico'>
     <FondoDinamico />
     </div>
+  <div className='home__tarjetas'>
   <ModalCrearSueño />
     <TarjetaHistoria />
     <TarjetaHistoria />
@@ -25,10 +26,18 @@ export default function Home() {
     <h1>Santidev</h1>
     </div>
     <div style={{display:"flex", flexDirection:"column", borderBottom:"1px solid white", padding:"15px"}}>
+      <Link href={'/perfil'}>
   <TarjetaEnlaceHome  text={"Mi Perfil"}/>
+      </Link>
+      <Link href={'/misSuenios'}>
   <TarjetaEnlaceHome text={"Mis sueños"} />
+      </Link>
+      <Link href={'/favoritos'}>
   <TarjetaEnlaceHome text={"Mis favoritos"} />
+      </Link>
+      <Link href={'/perfil'}>
   <TarjetaEnlaceHome text={"Cerrar sesioón"} />
+      </Link>
     </div>
   </div>
     </div>
