@@ -1,0 +1,15 @@
+.botonEnlacePerfil{
+    width: 170px;
+    height: 40px;
+    padding: 5px;
+    border-radius: 4px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color: #32c7de3a;
+    color: white;
+    border: none;
+    transition: all .2s;
+}
+.botonEnlacePerfil:hover{
+    background-color: #32c7de57; 
+}

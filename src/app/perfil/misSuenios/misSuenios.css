@@ -3,10 +3,7 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    gap: 20px;
-    padding: 100px;
+    padding-top: 100px;
 }
 
 .misSuenios::-webkit-scrollbar {
@@ -14,7 +11,7 @@
 }
 
 .misSuenios::-webkit-scrollbar-thumb {
-    background-color: rgba(128, 0, 128, 0.757); /* Color del thumb (la parte móvil) */
+    background-color: white /* Color del thumb (la parte móvil) */
 }
 
 .misSuenios::-webkit-scrollbar-track {
@@ -22,14 +19,14 @@
 }
 
 .misSuenios__text{
-    width: 100%;
+    width: 70%;
     color: white;
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 10px;
-    padding-left: 50px;
-    padding-right: 70px;
+    justify-content: space-between;
+    padding: 25px;
+    
 
 }
 

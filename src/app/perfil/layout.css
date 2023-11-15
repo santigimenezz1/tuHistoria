@@ -1,0 +1,24 @@
+.LayoutPerfil{
+    width: 100%;
+    display: flex;
+    
+}
+.enlaces{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.botonVolver{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+.main{
+    width: 70%;
+}
+.fondoDinamico{
+    z-index: -1;
+}

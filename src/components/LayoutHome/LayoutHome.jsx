@@ -33,10 +33,10 @@ const LayoutHome = ()=>{
       <Link href={'/perfil'}>
   <TarjetaEnlaceHome  text={"Mi Perfil"}/>
       </Link>
-      <Link href={'/misSuenios'}>
+      <Link href={'/perfil/misSuenios'}>
   <TarjetaEnlaceHome text={"Mis sueños"} />
       </Link>
-      <Link href={'/favoritos'}>
+      <Link href={'perfil/favoritos'}>
   <TarjetaEnlaceHome text={"Mis favoritos"} />
       </Link>
       <Link href={'/perfil'}>
