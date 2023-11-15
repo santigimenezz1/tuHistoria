@@ -16,25 +16,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='container__app'>
-        <nav className='navBar'>
-        <h1>Filtrá tu búsqueda</h1>
-        <div className='navBar__tarjetas'>
-        <TarjetaFiltro text={"Caía"} />
-        <TarjetaFiltro text={"Me perseguían"} />
-        <TarjetaFiltro text={"Me moría"} />
-        <TarjetaFiltro text={"Con un fantasma"} />
-        <TarjetaFiltro text={"Ovinis"} />
-        <TarjetaFiltro text={"Extraterrestes"} />
-        <TarjetaFiltro text={"Volaba"} />
-        <TarjetaFiltro text={"Era otra persona"} />
-        <TarjetaFiltro text={"Me peleaba"} />
-        </div>
-
-        </nav>
-        <main className='main'>
+        <div className='container__app'> 
         {children}
-        </main>
         </div>
         </body>
     </html>

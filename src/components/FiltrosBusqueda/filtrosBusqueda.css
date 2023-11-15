@@ -1,0 +1,15 @@
+
+  .filtroBusqueda{
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    
+  }
+  .filtroBusqueda__tarjetas{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }

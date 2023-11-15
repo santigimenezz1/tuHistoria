@@ -1,0 +1,36 @@
+.fondoDimanico__contain{
+    z-index: -10;
+    position: fixed;
+  }
+  
+   .container__home{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    gap: 35px;
+    padding-top: 100px;
+    overflow-y: scroll;
+  }
+  .home__tarjetas{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .home__user img{
+    width: 70px;
+    border-radius: 7px;
+    border: 2px solid purple;
+    padding: 2px;
+  }
+  .home__user h1{
+   color: white;
+   font-size: 15px;
+  }
+  
+  .fondoDinamico{
+    z-index: -1;
+  }
