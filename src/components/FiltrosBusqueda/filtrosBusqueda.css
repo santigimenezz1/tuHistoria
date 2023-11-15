@@ -1,11 +1,13 @@
 
   .filtroBusqueda{
     height: 100%;
+    width: 200px;
     color: white;
     display: flex;
     flex-direction: column;
     gap: 10px;
     font-size: 12px;
+    
     
   }
   .filtroBusqueda__tarjetas{

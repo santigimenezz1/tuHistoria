@@ -4,7 +4,7 @@ import '../FiltrosBusqueda/filtrosBusqueda.css'
 const FiltrosBusqueda = ()=>{
     return (
         <div className='filtroBusqueda'>
-        <h1>Filtrá tu búsqueda</h1>
+        <h1>Filtros</h1>
         <div className='filtroBusqueda__tarjetas'>
         <TarjetaFiltro text={"Caía"} />
         <TarjetaFiltro text={"Me perseguían"} />
