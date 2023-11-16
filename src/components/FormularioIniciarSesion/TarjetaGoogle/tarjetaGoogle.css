@@ -1,0 +1,22 @@
+.tarjetaGoogle{
+    width: 220px;
+    border: 2px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    gap: 15px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.tarjetaGoogle img{
+    width: 30px;
+    height: 30px;
+}
+.tarjetaGoogle{
+    background-color: rgba(128, 0, 128, 0.353);
+    transition: all .2s;
+}
+.tarjetaGoogle:hover{
+    background-color: rgba(128, 0, 128, 0.732);
+}

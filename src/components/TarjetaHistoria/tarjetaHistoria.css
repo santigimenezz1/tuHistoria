@@ -1,13 +1,12 @@
 .tarjetaHistoria{
-    border: 3px solid white;
     width: 700px;
     height: auto;
     border-radius: 15px;
     padding-left: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
     padding-bottom: 10px;
     padding-right: 10px;
-    background-color: #32c7de26;
+    background-color: #32c7de4c;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -27,7 +26,7 @@
 }
 .tarjetaHistoria__botonClose{
     position: absolute;
-    top: 3%;
+    top: 5%;
     right: 2%;
 }
 .tarjetaHistoria__buttons{

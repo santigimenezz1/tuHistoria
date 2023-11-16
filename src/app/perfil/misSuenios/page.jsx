@@ -1,6 +1,7 @@
  import TarjetaHistoria from '@/components/TarjetaHistoria/TarjetaHistoria'
 import './misSuenios.css'
 import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
+import ModalEditarSueño from '@/components/ModalEditarSueño/ModalEditarSueño'
 const MisSuenios = ( {children} )=>{
     return (
         <div className='misSuenios'>
@@ -15,6 +16,7 @@ const MisSuenios = ( {children} )=>{
             <TarjetaHistoria text={"En el viejo piano de la mansión abandonada, se escuchaban notas musicales misteriosas todas las noches. Un día, alguien decidió tocar esas melodías prohibidas. De repente, las sombras cobraron vida, bailando al ritmo de la música. Desde entonces, el piano suena solo en la oscuridad."} />
             <TarjetaHistoria text={"En el sótano de la casa, Laura encontró una puerta antigua. Al abrirla, entró en una habitación olvidada. En las paredes, fotografías de extraños que la miraban fijamente. Al cerrar la puerta, las fotos cobraron vida. Desde ese día, los rostros la observan desde cualquier esquina de su hogar."} />
             </div>
+            
         </div>
     )
 }

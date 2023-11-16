@@ -10,6 +10,7 @@ import { TextField } from '@mui/material';
 import BotonModalEditar from '../BotonModalEditar/BotonModalEditar';
 import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
+import BotonClose from '../TarjetaHistoria/BotonClose/BotonClose';
 
 const style = {
   position: 'absolute',
@@ -23,14 +24,14 @@ const style = {
   p: 4,
 };
 
-export default function ModalEliminar( {text} ) {
+export default function ModalEliminarSueño( {text} ) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <div>
       <div onClick={()=>handleOpen()}>
-      <BotonModalEditar text={"Salir"} />
+      <BotonClose />
       </div>
       <Modal
         open={open}
@@ -43,11 +44,11 @@ export default function ModalEliminar( {text} ) {
           <CloseIcon />
           </div>
           <Typography style={{textAlign:"center", fontSize:"22px"}} id="modal-modal-description" sx={{ mt: 2 }}>
-            {"Salir"}
+            {"¿Seguro quieres eliminar este sueño?"}
           </Typography>
           <div className='container__buttonsForm'>
             <Boton text={"cancelar"} />
-            <Boton text={"Salir"}  />
+            <Boton text={"eliminar"}  />
           </div>
         </div>
        

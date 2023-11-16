@@ -24,7 +24,7 @@ const HeaderPerfil = ()=>{
 
         <div className='container__modales'>
         <ModalEditar  />
-        <ModalEliminar />
+        <ModalEliminar text={"Salir"} />
         </div>
 
    
