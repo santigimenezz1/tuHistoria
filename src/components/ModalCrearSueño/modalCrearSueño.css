@@ -21,13 +21,16 @@
 .formulario__modalEditar{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
+    padding: 10px;
+
 }
 .input__file{
 padding: 10px;
 cursor: pointer;
 border: 1px solid white;
 border-radius: 7px;
+
 
 }
 .input__text{
@@ -36,6 +39,7 @@ border-radius: 7px;
     padding: 10px;
     border-radius: 7px;
 border: 1px solid white; 
+
 }
 .container__modalEditar__iconoClose{
     width: 30px;
@@ -43,6 +47,7 @@ border: 1px solid white;
     top:  2%;
     right: 0%;
     cursor: pointer;
+    
 }
 
 .container__buttonsForm{
