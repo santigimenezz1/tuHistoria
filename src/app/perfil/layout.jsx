@@ -25,6 +25,9 @@ const LayoutPerfil = ( {children} )=>{
                 <Link href={'/perfil/favoritos'}>
             <BotonEnlacePerfil text={"Mis favoritos"} />
                 </Link>
+                <Link href={'/mensajes'}>
+            <BotonEnlacePerfil text={"Mensajes"} />
+                </Link>
             
             </div>
             <main>
