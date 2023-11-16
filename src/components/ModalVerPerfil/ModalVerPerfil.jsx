@@ -1,15 +1,16 @@
- "use client"
+"use client"
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import '../ModalEditar/modalEditar.css'
+import '../ModalVerPerfil/modalVerPerfil.css'
 import AvatarPerfil from '../AvatarPerfil/AvatarPerfil';
 import { TextField } from '@mui/material';
 import BotonModalEditar from '../BotonModalEditar/BotonModalEditar';
 import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
+import ContadorSueños from '../ContadorSueños/ContadorSueños';
 
 const style = {
   position: 'absolute',
@@ -23,14 +24,20 @@ const style = {
   p: 4,
 };
 
-export default function ModalEditar() {
+export default function ModalVerPerfil() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   return (
     <div>
       <div onClick={()=>handleOpen()}>
-      <BotonModalEditar text={"editar"} />
+      <div className='tarjetaHistoria__user'>
+                <img src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
+                <div className='tarjetaHistoria__user__info'>
+                <h4>Santidev</h4>
+                <h5>Hace 6 horas</h5>
+                </div>
+            </div>
       </div>
       <Modal
         open={open}
@@ -42,22 +49,17 @@ export default function ModalEditar() {
           <div onClick={()=>handleClose()} className='container__modalEditar__iconoClose'>
           <CloseIcon />
           </div>
-          <Typography id="modal-modal-title" variant="h6" component="h2">
-            Editar perfil 
-          </Typography>
-          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-           <AvatarPerfil />
-          </Typography>
-          <form className='formulario__modalEditar'>
-            <h5>Foto perfil</h5>
-          <input className='input__file' type='file'></input>
-          <h5>Nombre</h5>
-          <input className='input__text' type='text' placeholder='Santidev'></input>
-          <div className='container__buttonsForm'>
-            <Boton text={"cancelar"} />
-            <Boton text={"editar"}  />
+          <div className='container__modalEditar__Perfil'>
+            <img src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915236/tu%20historia/premium_photo-1687832783320-35671afbf484_ogghp1.jpg'></img>
+            <h1>Santiago gimenez</h1>
+            <h3>Se unio el 26/3/2022</h3>
           </div>
-          </form>
+          <div>
+            <ContadorSueños contador={5} type={"sueño"} />
+            <ContadorSueños contador={3} type={"favorito"} />
+          </div>
+          <button className='botonEnviarMensaje'>Enviar mensaje</button>
+         
         </div>
        
       </Modal>

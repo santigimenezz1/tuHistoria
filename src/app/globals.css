@@ -16,4 +16,8 @@ body{
   height: 100vh;
   display: flex;
 }
+.fondoDinamico{
+  z-index: -100;
+  position: fixed;
+}
 

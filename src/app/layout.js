@@ -19,6 +19,9 @@ export default function RootLayout({ children }) {
         <div className='container__app'> 
         {children}
         </div>
+        <div className='fondoDinamico'>
+        <FondoDinamico />
+    </div>
         </body>
     </html>
   )

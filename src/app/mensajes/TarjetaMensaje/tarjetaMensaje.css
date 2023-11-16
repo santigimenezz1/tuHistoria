@@ -1,0 +1,17 @@
+.tarjetaMensaje{
+    height: 50px;
+    border-radius: 7px;
+    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    line-height: 50px;
+    align-self: flex-start;
+    background-color: #32c7de4c;
+    border: none;
+
+    
+}
+.tarjetaMensaje span{
+    color: white;
+}

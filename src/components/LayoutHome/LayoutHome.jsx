@@ -14,9 +14,6 @@ const LayoutHome = ()=>{
         <div>
           <FiltrosBusqueda />
         </div>
-    <div className='fondoDinamico'>
-        <FondoDinamico />
-    </div>
   <div className='home__tarjetas'>
   <ModalCrearSueño />
     <TarjetaHistoria text={"En una noche sin luna, María notó una sombra oscura en la esquina de su habitación. Se acercó con temor y vio una figura que parecía moverse sola. Al encender la luz, la sombra desapareció. Desde entonces, cada noche, la sombra reaparece, acercándose lentamente."} />
@@ -38,6 +35,9 @@ const LayoutHome = ()=>{
       </Link>
       <Link href={'perfil/favoritos'}>
   <TarjetaEnlaceHome text={"Mis favoritos"} />
+      </Link>
+      <Link href={'/mensajes'}>
+  <TarjetaEnlaceHome text={"Mensajes"} />
       </Link>
       <Link href={'/perfil'}>
   <TarjetaEnlaceHome text={"Cerrar sesioón"} />
