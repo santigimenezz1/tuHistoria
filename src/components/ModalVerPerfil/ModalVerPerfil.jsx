@@ -11,6 +11,7 @@ import BotonModalEditar from '../BotonModalEditar/BotonModalEditar';
 import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
 import ContadorSueños from '../ContadorSueños/ContadorSueños';
+import ModalEnviarMensaje from './ModalEnviarMensaje/ModalEnviarMensaje';
 
 const style = {
   position: 'absolute',
@@ -58,7 +59,7 @@ export default function ModalVerPerfil() {
             <ContadorSueños contador={5} type={"sueño"} />
             <ContadorSueños contador={3} type={"favorito"} />
           </div>
-          <button className='botonEnviarMensaje'>Enviar mensaje</button>
+          <ModalEnviarMensaje />
          
         </div>
        
