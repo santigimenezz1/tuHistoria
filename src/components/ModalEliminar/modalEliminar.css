@@ -28,6 +28,7 @@ cursor: pointer;
 border: 1px solid white;
 border-radius: 7px;
 
+
 }
 .input__text{
     background-color: transparent;
@@ -35,6 +36,7 @@ border-radius: 7px;
     padding: 10px;
     border-radius: 7px;
 border: 1px solid white; 
+
 }
 .container__modalEditar__iconoClose{
     width: 30px;
@@ -42,12 +44,12 @@ border: 1px solid white;
     top:  2%;
     right: 0%;
     cursor: pointer;
+
 }
 
 .container__buttonsForm{
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 5px;
-    padding: 15px;
+    padding-top: 10px;
 }
