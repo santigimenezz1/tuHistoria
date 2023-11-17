@@ -4,9 +4,13 @@ import InputEnviarMensaje from './InputEnviarMensaje/InputEnviarMensaje'
 import TarjetaMensaje from './TarjetaMensaje/TarjetaMensaje'
 import TarjetaUsuarioMensaje from './TarjetaUsuarioMensaje/TarjetaUsuarioMensaje'
 import Link from 'next/link'
+import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
 const Mensaje = ()=>{
     return (
         <div className="container__mensaje">
+              <div className='fondoDinamico'>
+        <FondoDinamico />
+    </div>
             <div className='container__mensaje__botonVolver'>
                 <Link href={'/'}>
             <BotonVolver />

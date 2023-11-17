@@ -11,6 +11,9 @@ import ModalVerPerfil from '@/components/ModalVerPerfil/ModalVerPerfil'
 export default function Home() {
   return (
     <>
+      <div className='fondoDinamico'>
+        <FondoDinamico />
+    </div>
     <LayoutHome />
     </>
   )
