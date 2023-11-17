@@ -1,0 +1,13 @@
+.tarjetaIlustraciones{
+  display: flex;
+  gap: 30px;
+  cursor: pointer;
+}
+.tarjetaIlustraciones img{
+    width: 250px;
+    border-radius: 15px;
+    transition: all .4s;   
+}
+.tarjetaIlustraciones img:hover{
+    transform: scale(1.2);
+  }

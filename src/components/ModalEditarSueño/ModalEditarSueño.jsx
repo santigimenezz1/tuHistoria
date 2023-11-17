@@ -6,13 +6,14 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import '../ModalEditarSueño/modalEditarSueño.css'
 import AvatarPerfil from '../AvatarPerfil/AvatarPerfil';
-import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, TextField, styled } from '@mui/material';
+import { FormControl, FormControlLabel, FormLabel, Radio, TextField, styled } from '@mui/material';
 import BotonModalEditar from '../BotonModalEditar/BotonModalEditar';
 import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
 import BotonCrearCuenta from '../BotonCrearTarea/BotonCrearTarea';
 import TarjetaFiltro from '../TarjetaFiltro/TarjetaFiltro';
 import BotonEditar from '../TarjetaHistoria/BotonEditar/BotonEditar';
+import RadioGroup from '../RadioGroup/RadioGroup';
 
 const style = {
   position: 'absolute',
@@ -91,16 +92,7 @@ export default function ModalEditarSueño() {
   <TarjetaFiltro text={"Veía un muerto"} />
   </div>
 
-
-  <FormLabel id="demo-radio-buttons-group-label">Quieres que sea..</FormLabel>
-  <RadioGroup
-    aria-labelledby="demo-radio-buttons-group-label"
-    defaultValue="Público"
-    name="radio-buttons-group"
-  >
-    <FormControlLabel value="female" control={<Radio />} label="Público" />
-    <FormControlLabel value="male" control={<Radio />} label="Privado" />
-  </RadioGroup>
+<RadioGroup />
 </FormControl>
           <div className='container__buttonsForm'>
             <Boton text={"cancelar"} />

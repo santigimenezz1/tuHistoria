@@ -2,6 +2,11 @@
     display: flex;
     flex-direction: column;
     color: white;
+    margin-top: 30px;
+    gap: 10px;
+  }
+  .radio-buttons h1{
+    font-size: 15px;
   }
   
   .radio-button {
