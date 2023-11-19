@@ -10,10 +10,11 @@ const { default: TarjetaFiltro } = require("../TarjetaFiltro/TarjetaFiltro")
 
 const LayoutHome = ()=>{
     return (
-        <div className='container__home'>  
+        <div className='container__home'> 
         <div>
           <FiltrosBusqueda />
         </div>
+
   <div className='home__tarjetas'>
   <ModalCrearSueño />
     <TarjetaHistoria text={"En una noche sin luna, María notó una sombra oscura en la esquina de su habitación. Se acercó con temor y vio una figura que parecía moverse sola. Al encender la luz, la sombra desapareció. Desde entonces, cada noche, la sombra reaparece, acercándose lentamente En una noche sin luna, María notó una sombra oscura en la esquina de su habitación. Se acercó con temor y vio una figura que parecía moverse sola. Al encender la luz, la sombra desapareció."} />
@@ -26,7 +27,7 @@ const LayoutHome = ()=>{
     <img src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
     <h1>Santidev</h1>
     </div>
-    <div style={{display:"flex", flexDirection:"column", borderBottom:"1px solid white", padding:"15px"}}>
+    <div style={{ width:"20vw",display:"flex", flexDirection:"column", borderBottom:"1px solid white", padding:"15px"}}>
       <Link href={'/perfil'}>
   <TarjetaEnlaceHome  text={"Mi Perfil"}/>
       </Link>
@@ -45,6 +46,8 @@ const LayoutHome = ()=>{
     </div>
   </div>
     </div> 
+
+
     )
 }
 

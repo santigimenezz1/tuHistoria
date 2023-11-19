@@ -12,13 +12,14 @@
     justify-content: center; 
     padding-top: 100px;
     overflow-y: scroll;
+    gap: 30px;
   }
   .home__user{
-    width: 200px;
+    width: 20vw;
   }
   .home__tarjetas{
     display: flex;
-    width: 800px;
+    width: 50vw;
     flex-direction: column;
     gap: 20px;
     justify-content: center;

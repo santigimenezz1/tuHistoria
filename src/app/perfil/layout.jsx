@@ -30,7 +30,7 @@ const LayoutPerfil = ( {children} )=>{
                 </Link>
             
             </div>
-            <main>
+            <main className='main'>
             {children}
             </main>
         </div>

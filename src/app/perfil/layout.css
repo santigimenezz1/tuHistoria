@@ -18,7 +18,8 @@
     left: 2%;
 }
 .main{
-    width: 70%;
+    width: 50%;
+ height: 100%;
 }
 .fondoDinamico{
     z-index: -1;
