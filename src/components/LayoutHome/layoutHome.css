@@ -50,17 +50,36 @@
  
 
   @media screen and (max-width:1000px){
-    .container__modalResponsive{
+    .container__home{
+      height: 100%;
       width: 100%;
-      display: none;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-      padding: 25px;
-      justify-content: space-between;
-      padding-left: 70px;
-      padding-right: 70px;
+      justify-content: start; 
+      padding-top: 0px;
+      overflow-y: scroll;
+      gap: 30px;
     }
-
-
+    .container__modalResponsive{
+      display: flex;
+    }
+    .container__filtroBusqueda{
+      display: none;
+    }
+    .container__usuario{
+      display: none;
+    }
+  
+    .home__tarjetas{
+      display: flex;
+      width: 85vw;
+      flex-direction: column;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+  
 }
 
 
@@ -94,6 +113,13 @@
     justify-content: center;
     align-items: center;
   }
+  .container__modalResponsive{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 
 
 }
@@ -123,7 +149,7 @@
   .container__modalResponsive{
     display: flex;
     flex-direction: column-reverse;
-    gap: 10px;
+    gap: 20px;
   }
 
   
