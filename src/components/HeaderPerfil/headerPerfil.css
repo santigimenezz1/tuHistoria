@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 15px; 
     height: 100%;
+    width: auto;
     justify-content: center;
 }
 .headerPerfil{
@@ -23,8 +24,14 @@
 
 @media screen and (max-width:800px){
     .container__headerPerfil{
-      width: 100%;
-      justify-content: start;
-      padding: 70px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px; 
+        height: 100%;
+        justify-content: start;
+        margin-top: 70px;
     }
 }
+
+
+

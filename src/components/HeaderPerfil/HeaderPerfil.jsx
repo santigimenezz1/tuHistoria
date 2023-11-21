@@ -17,7 +17,7 @@ const HeaderPerfil = ()=>{
 
         <Email />
 
-        <div>
+        <div className='container__contadorSueños'>
         <ContadorSueños contador={2} type={"sueño"} />
         <ContadorSueños contador={5} type={"favorito"} />
         </div>

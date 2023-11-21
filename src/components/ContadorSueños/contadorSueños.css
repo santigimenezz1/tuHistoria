@@ -5,3 +5,18 @@
 .contadorSuenios h1 span {
     color: rgb(33, 113, 117);
 }
+
+
+@media screen and (max-width: 460px){
+    .contadorSuenios__text{
+        color: white;
+        font-size: 16px;
+    }   
+}
+
+@media screen and (max-width: 414px){
+    .contadorSuenios__text{
+        color: white;
+        font-size: 14px;
+    }   
+}
