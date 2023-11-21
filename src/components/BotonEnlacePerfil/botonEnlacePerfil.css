@@ -16,9 +16,12 @@
 
 @media screen and (max-width:800px){
     .botonEnlacePerfil{
-        width: 150px;
+        width: 20vw;
     }
+}
 
-
-
+@media screen and (max-width:414px){
+    .botonEnlacePerfil{
+        width: 25vw;
+    }
 }

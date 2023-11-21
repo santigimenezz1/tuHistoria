@@ -7,15 +7,15 @@ import BotonVolver from '@/components/BotonVolver/BotonVolver'
 const LayoutPerfil = ( {children} )=>{
     return (
         <div className="LayoutPerfil">
-            <div className='fondoDinamico'>
-                <FondoDinamico />
-            </div>
-            <div className='enlaces'>
                 <div className='botonVolver'>
                     <Link href={'/'}>
                 <BotonVolver />
                     </Link>
                 </div>
+            <div className='fondoDinamico'>
+                <FondoDinamico />
+            </div>
+            <div className='enlaces'>
                 <Link href={'/perfil'}>
             <BotonEnlacePerfil text={"Mi perfil"} />
                 </Link>
