@@ -14,3 +14,23 @@
 .botonCrearCuenta button:hover{
   border: 2px solid #32c7de7d;
    }
+
+
+
+
+   @media screen and (max-width:1000px){
+
+    .botonCrearCuenta button{
+      width: 85vw;
+      color: white;
+      letter-spacing: 2px;
+      background-color: #01000cac;
+      height: 50px;
+      border-radius: 10px;
+      cursor: pointer;
+      border: none;
+      transition: all .2s ;
+      border: 2px solid white ;
+     
+     }
+}

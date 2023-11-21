@@ -16,6 +16,7 @@ const FiltrosBusqueda = ()=>{
         <TarjetaFiltro text={"Era otra persona"} />
         <TarjetaFiltro text={"Me peleaba"} />
         </div>
+        <button>Aplicar</button>
         </div>
     )
 }

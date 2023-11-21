@@ -13,3 +13,12 @@
 .botonEnlacePerfil:hover{
     background-color: #32c7de57; 
 }
+
+@media screen and (max-width:800px){
+    .botonEnlacePerfil{
+        width: 150px;
+    }
+
+
+
+}

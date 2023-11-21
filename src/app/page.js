@@ -8,6 +8,8 @@ import Link from 'next/link'
 import TarjetaFiltro from '@/components/TarjetaFiltro/TarjetaFiltro'
 import LayoutHome from '@/components/LayoutHome/LayoutHome'
 import ModalVerPerfil from '@/components/ModalVerPerfil/ModalVerPerfil'
+import ModalFiltroResponsive from '@/components/ModalFiltroResponsive/ModalFiltroResponsive'
+import ModalPerfilResponsive from '@/components/ModalPerfilResponsive/ModalPerfilResponsive'
 export default function Home() {
   return (
     <>

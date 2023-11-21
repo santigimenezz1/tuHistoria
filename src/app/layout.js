@@ -4,6 +4,7 @@ import BotonEnlace from '@/components/BotonEnlace/BotonEnlace'
 import Link from 'next/link'
 import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
 import TarjetaFiltro from '@/components/TarjetaFiltro/TarjetaFiltro'
+import '../app/MediaQuery/MediaQuery.css'
 
 const inter = Inter({ subsets: ['latin'] })
 

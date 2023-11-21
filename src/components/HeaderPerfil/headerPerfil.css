@@ -19,3 +19,12 @@
     display: flex;
     gap: 10px;
 }
+
+
+@media screen and (max-width:800px){
+    .container__headerPerfil{
+      width: 100%;
+      justify-content: start;
+      padding: 70px;
+    }
+}

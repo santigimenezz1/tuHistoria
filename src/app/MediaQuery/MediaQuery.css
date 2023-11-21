@@ -1,0 +1,10 @@
+@media screen and (max-width:800px){
+    .LayoutPerfil{
+        flex-direction: column;
+    }
+  .enlaces{
+    width: 100%
+  }
+
+
+}

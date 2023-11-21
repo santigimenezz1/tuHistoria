@@ -1,6 +1,12 @@
 .perfil{
  width: 100%;
  height: 100vh;
+}
 
 
+@media screen and (max-width:800px){
+    .perfil{
+       width: 100vw;
+       display: flex;
+    }
 }
