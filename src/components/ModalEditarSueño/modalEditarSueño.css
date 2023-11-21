@@ -1,4 +1,4 @@
-.container__modalCrearSueño{
+.container__modalEditarSueño{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -62,4 +62,12 @@ border-radius: 7px;
     justify-content: start;
     gap: 10px;
     margin-top: 10px ;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    .container__modalEditarSueño{  
+        width: 85vw;
+    }  
 }

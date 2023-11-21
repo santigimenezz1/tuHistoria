@@ -12,17 +12,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
 import BotonClose from '../TarjetaHistoria/BotonClose/BotonClose';
 
-const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
-  boxShadow: 24,
-  p: 4,
-};
+
 
 export default function ModalEliminarSueño( {text} ) {
   const [open, setOpen] = React.useState(false);
@@ -39,7 +29,7 @@ export default function ModalEliminarSueño( {text} ) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <div className='container__modalEditar'>
+        <div className='container__modalEliminar'>
           <div onClick={()=>handleClose()} className='container__modalEditar__iconoClose'>
           <CloseIcon />
           </div>

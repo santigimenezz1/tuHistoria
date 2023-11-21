@@ -1,4 +1,4 @@
-.container__modalEditar{
+.container__modalEliminar{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -52,4 +52,16 @@ border: 1px solid white;
     justify-content: center;
     gap: 10px;
     padding-top: 10px;
+}
+
+
+
+
+
+
+@media screen and (max-width: 414px){
+    .container__modalEliminar{
+        transform: translate(-50%, -50%);
+        width: 320px;
+    } 
 }
