@@ -35,6 +35,8 @@ const Mensaje = ()=>{
                         <TarjetaMensaje text={"Me gustó mucho la interpretacion de tu sueño!"} />
                         <TarjetaMensaje text={"Muchas gracias Santiago!"} />
                         <TarjetaMensaje text={"De nada, nos vemos!"} />
+                        <TarjetaMensaje text={"De nada, nos vemos!"} />
+
                     </div>
                     <div className='container__chat__input'>
                         <div className='container__chat__input__input'>
