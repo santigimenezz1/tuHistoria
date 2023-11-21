@@ -4,8 +4,7 @@ import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
 import ModalEditarSueño from '@/components/ModalEditarSueño/ModalEditarSueño'
 const MisSuenios = ( {children} )=>{
     return (
-        <div className='misSuenios'>
-               
+        <div className='misSuenios'>  
             <div className='misSuenios__text'>
             <h1>Tus sueños</h1>
             <h2>Cantidad de sueños: 10</h2>
