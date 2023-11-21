@@ -19,7 +19,6 @@ const style = {
   p: 4,
   border:"none",
   borderRadius: "10px"
-
 };
 
 export default function ModalFiltroResponsive() {
@@ -36,10 +35,10 @@ export default function ModalFiltroResponsive() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <div className='container__modalFiltro' sx={style}>
       <FiltrosBusqueda />
 
-        </Box>
+        </div>
       </Modal>
     </div>
   );

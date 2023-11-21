@@ -44,7 +44,7 @@ export default function ModalPerfilResponsive() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <Box sx={style}>
+        <div className='container__modalPerfil'>
       
   <div className='home__userResponsive'>
     <div style={{display:"flex", gap:"10px", alignItems:"center", borderBottom:"1px solid white", paddingBottom:"15px"}}>
@@ -70,7 +70,7 @@ export default function ModalPerfilResponsive() {
     </div>
     </div>
 
-        </Box>
+        </div>
       </Modal>
     </div>
   );
