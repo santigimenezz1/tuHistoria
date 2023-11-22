@@ -5,6 +5,7 @@ import Link from 'next/link'
 import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
 import TarjetaFiltro from '@/components/TarjetaFiltro/TarjetaFiltro'
 import '../app/MediaQuery/MediaQuery.css'
+import ContextoGlobal from '@/Context/context'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,7 +19,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         <div className='container__app'> 
+        <ContextoGlobal>
         {children}
+        </ContextoGlobal>
         </div>
         </body>
     </html>

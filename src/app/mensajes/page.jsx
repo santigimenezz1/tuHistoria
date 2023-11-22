@@ -6,6 +6,8 @@ import TarjetaUsuarioMensaje from './TarjetaUsuarioMensaje/TarjetaUsuarioMensaje
 import Link from 'next/link'
 import FondoDinamico from '@/components/FondoDinamico/FondoDinamico'
 const Mensaje = ()=>{
+    const {estado, setEstado, cambiarEstado} = useContext(CreateContext)
+
     return (
         <div className="container__mensaje">
               <div className='fondoDinamico'>

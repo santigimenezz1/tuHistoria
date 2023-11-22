@@ -10,12 +10,11 @@ import { addDoc, collection } from 'firebase/firestore'
 
 const FormularioRegistro = () => {
     const [open, setOpen] = useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
 
     const { handleChange, handleSubmit, errors } = useFormik({
         initialValues: {
             nombre: "",
+            apellido: "",
             email: "",
             password: ""
         },
@@ -33,7 +32,6 @@ const FormularioRegistro = () => {
                         showConfirmButton: true,
                         timer: 3500,
                     });
-                    handleClose();
                 }, 3000);
             } catch (createError) {
                 const errorCode = createError.code;
@@ -65,8 +63,10 @@ const FormularioRegistro = () => {
                 <h1>Registrate</h1>
                 <div className='inputs__formulario'>
                     <input onChange={handleChange} name='nombre' placeholder='Nombre'></input>
+                    <input onChange={handleChange} name='apellido' placeholder='Apellido'></input>
                     <input onChange={handleChange} name='email' placeholder='Email'></input>
                     <input onChange={handleChange} name='password' type='password' placeholder='Contraseña'></input>
+
                 </div>
                 <div className='formulario__info'>
                     <h4>La contraseña debe tener:</h4>
