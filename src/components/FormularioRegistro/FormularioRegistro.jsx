@@ -12,7 +12,6 @@ const FormularioRegistro = () => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-    const [loading, setLoading] = useState(false);
 
     const { handleChange, handleSubmit, errors } = useFormik({
         initialValues: {
@@ -26,7 +25,6 @@ const FormularioRegistro = () => {
                 const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
                 // Assuming `addDoc` is a function to add a document to Firestore
                 await addDoc(collection(db, "usuarios"), data);
-                setLoading(true);
                 setTimeout(() => {
                     Swal.fire({
                         position: "center",
