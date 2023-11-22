@@ -5,8 +5,10 @@ import '../FormularioIniciarSesion/formularioIniciarSesion.css'
 import { useFormik } from 'formik'
 import Swal from 'sweetalert2'
 import { login } from '@/firebaseConfig'
+import ModalRecuperarPassword from '../ModalRecuperarPassword/ModalRecuperarPassword'
 
 const FormularioIniciarSesion = () => {
+
   const { handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",
@@ -21,7 +23,7 @@ const FormularioIniciarSesion = () => {
             Swal.fire({
               position: "center",
               icon: "success",
-              title: "¡Bienvenido a Cascanueces saludable!",
+              title: "¡Bienvenido a TuHistoria.com!",
               showConfirmButton: true,
               timer: 3500,
             });
@@ -34,7 +36,8 @@ const FormularioIniciarSesion = () => {
             title: "Esta cuenta no existe",
             showConfirmButton: true,
             timer: 3500,
-          });        // Handle the error appropriately, show an alert, or log it
+          });  
+          // Handle the error appropriately, show an alert, or log it
       }
     },
     validateOnChange: false,
@@ -50,6 +53,7 @@ const FormularioIniciarSesion = () => {
           <input onChange={handleChange} name="password" type="password" placeholder="Contraseña"></input>
         </div>
         <BotonEnviarFormulario text={"Iniciar sesión"} />
+      <ModalRecuperarPassword />
       </form>
     </div>
   );

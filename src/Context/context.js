@@ -4,7 +4,7 @@ import { createContext, useState } from "react"
 export const CreateContext = createContext()
 
 const ContextoGlobal = ( {children} )=>{
-    const [usuarioOn, setUsuarioOn] = useState(false)
+    const [usuarioOn, setUsuarioOn] = useState("false")
 
     let data = {
      usuarioOn,
