@@ -1,0 +1,31 @@
+ "use client"
+
+import { db } from "@/firebaseConfig";
+import { collection, onSnapshot } from "firebase/firestore";
+import { useEffect, useState } from "react";
+
+const { default: TarjetaHistoria } = require("../TarjetaHistoria/TarjetaHistoria")
+
+const LayoutTarjetasHome = ()=>{
+    const [historias, setHistorias] = useState([]); // Estado para almacenar las historias
+
+    useEffect(() => {
+      const unsubscribe = onSnapshot(collection(db, 'historias'), (historia) => {
+        setHistorias(historia.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
+      });
+
+      return () => unsubscribe();
+    }, []);
+
+    console.log({historias})
+    return (
+        <>
+        {
+        historias.filter((historia)=>historia.publico === true).map((historia, index) => (
+          <TarjetaHistoria key={index} historia={historia} />
+        ))
+        }
+        </>
+    )
+}
+export default LayoutTarjetasHome
