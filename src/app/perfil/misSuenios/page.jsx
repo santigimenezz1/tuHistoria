@@ -28,7 +28,7 @@ const MisSuenios = ({ children }) => {
       </div>
       <div className='misSuenios__tarjetas'>
         {historias.map((historia, index) => (
-          <TarjetaHistoria historia={historia} />
+          <TarjetaHistoria key={index} historia={historia} />
         ))}
       </div>
     </div>
