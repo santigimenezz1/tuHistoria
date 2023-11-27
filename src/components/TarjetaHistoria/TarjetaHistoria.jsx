@@ -1,3 +1,4 @@
+
  import Link from 'next/link'
 import '../TarjetaHistoria/tarjetaHistoria.css'
 import BotonClose from './BotonClose/BotonClose'
@@ -5,7 +6,14 @@ import BotonEditar from './BotonEditar/BotonEditar'
 import ModalVerPerfil from '../ModalVerPerfil/ModalVerPerfil'
 import ModalEditarSueño from '../ModalEditarSueño/ModalEditarSueño'
 import ModalEliminarSueño from '../ModalEliminarSueño/ModalEliminarSueño'
-const TarjetaHistoria = ( {text} )=>{
+import { collection, deleteDoc } from 'firebase/firestore'
+import { db } from '@/firebaseConfig'
+
+
+
+
+function TarjetaHistoria ( {historia, text} ){
+    
     return (
         <div className="tarjetaHistoria">
             <div className='tarjetaHistoria__perfil'>
@@ -13,12 +21,17 @@ const TarjetaHistoria = ( {text} )=>{
             </div>
             <div className='tarjetaHistoria__botonClose'>
                 <div className='tarjetaHistoria__buttons'>
-                <ModalEliminarSueño />
+                <ModalEliminarSueño historia={historia} />
                 <ModalEditarSueño />
                 </div>
             </div>
                 <div className='tarjetaHistoria__mensaje'>
-                    <span>{text}</span>
+                  {
+                       historia &&
+                       <span>{historia.mensaje.mensaje}</span>
+                       }
+
+                    
 
                 </div>
 

@@ -16,6 +16,7 @@
     gap: 10px;
     position: relative;
     border: 2px solid white;
+    z-index: 1;
 }
 .formulario__modalEditar{
     display: flex;
@@ -74,3 +75,9 @@ border: 1px solid white;
         width: 85vw;
     }  
 }
+
+
+.custom-swal-popup {
+    z-index: 2; /* O cualquier valor que sea más alto que el del modal */
+  }
+  

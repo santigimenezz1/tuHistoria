@@ -11,13 +11,30 @@ import BotonModalEditar from '../BotonModalEditar/BotonModalEditar';
 import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
 import BotonClose from '../TarjetaHistoria/BotonClose/BotonClose';
+import { db } from '@/firebaseConfig';
+import { deleteDoc, doc } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 
 
 
-export default function ModalEliminarSueño( {text} ) {
+
+export default function ModalEliminarSueño( { historia, text} ) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const eliminarHistoria = (historiaId)=>{
+    const docRef = doc(db, "historias", historiaId)
+    deleteDoc(docRef)
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Historia eliminada ! ",
+      showConfirmButton: true,
+      timer: 3500,
+    });
+    handleClose()
+}
+ 
   return (
     <div>
       <div onClick={()=>handleOpen()}>
@@ -37,8 +54,12 @@ export default function ModalEliminarSueño( {text} ) {
             {"¿Seguro quieres eliminar este sueño?"}
           </Typography>
           <div className='container__buttonsForm'>
+            <div onClick={()=> handleClose()}>
             <Boton text={"cancelar"} />
+            </div>
+            <div onClick={()=>eliminarHistoria(historia.id)}>
             <Boton text={"eliminar"}  />
+            </div>
           </div>
         </div>
        

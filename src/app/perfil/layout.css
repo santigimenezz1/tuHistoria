@@ -4,6 +4,8 @@
     overflow-y: auto;  
     position: relative;
     overflow: hidden;
+    overflow-y: auto;
+
 
  
 }
