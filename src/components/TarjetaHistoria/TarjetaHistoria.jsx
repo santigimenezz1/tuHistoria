@@ -8,6 +8,7 @@ import ModalEditarSueño from '../ModalEditarSueño/ModalEditarSueño'
 import ModalEliminarSueño from '../ModalEliminarSueño/ModalEliminarSueño'
 import { collection, deleteDoc } from 'firebase/firestore'
 import { db } from '@/firebaseConfig'
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 
 
@@ -16,6 +17,9 @@ function TarjetaHistoria ( {historia, text} ){
     
     return (
         <div className="tarjetaHistoria">
+            <Link href={`/detalle/${historia.id}`}>
+            <button className='tarjetaHistoria__detalle'>Detalle</button>
+            </Link>
             <div className='tarjetaHistoria__perfil'>
                 <ModalVerPerfil />
             </div>

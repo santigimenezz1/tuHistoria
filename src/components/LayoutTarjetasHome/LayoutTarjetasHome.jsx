@@ -22,7 +22,7 @@ const LayoutTarjetasHome = ()=>{
         <>
         {
         historias.filter((historia)=>historia.publico === true).map((historia, index) => (
-          <TarjetaHistoria key={index} historia={historia} />
+          <TarjetaHistoria  key={index} historia={historia} />
         ))
         }
         </>

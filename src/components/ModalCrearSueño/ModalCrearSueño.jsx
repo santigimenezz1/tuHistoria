@@ -64,6 +64,7 @@ export default function ModalCrearSueño() {
         categorias: [...estadoCategoria],
         publico: estadoPublico,
         date: serverTimestamp(),
+        comentarios: []
       }
       event.preventDefault();
       console.log({objeto})
