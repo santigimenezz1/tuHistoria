@@ -71,13 +71,15 @@ export default function ModalCrearSueño() {
       // CREAR LA EN ORDEN FIREBASE
          const ordersCollection = collection(db, "historias");
          addDoc(ordersCollection, objeto)
+         handleClose()
          Swal.fire({
           position: "center",
           icon: "success",
-          title: "Historia eliminada ! ",
+          title: "Historia agregada ! ",
           showConfirmButton: true,
           timer: 3500,
         });
+        
         
     
         

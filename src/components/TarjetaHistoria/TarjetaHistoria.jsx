@@ -22,7 +22,7 @@ function TarjetaHistoria ( {historia, text} ){
             <div className='tarjetaHistoria__botonClose'>
                 <div className='tarjetaHistoria__buttons'>
                 <ModalEliminarSueño historia={historia} />
-                <ModalEditarSueño />
+                <ModalEditarSueño historia={historia}   />
                 </div>
             </div>
                 <div className='tarjetaHistoria__mensaje'>

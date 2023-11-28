@@ -14,6 +14,11 @@ import BotonCrearCuenta from '../BotonCrearTarea/BotonCrearTarea';
 import TarjetaFiltro from '../TarjetaFiltro/TarjetaFiltro';
 import BotonEditar from '../TarjetaHistoria/BotonEditar/BotonEditar';
 import RadioGroup from '../RadioGroup/RadioGroup';
+import { useFormik } from 'formik';
+import { useState } from 'react';
+import { addDoc, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
+import { db } from '@/firebaseConfig';
+import Swal from 'sweetalert2';
 
 const style = {
   position: 'absolute',
@@ -47,12 +52,49 @@ const StyledTextField = styled(TextField)({
       color: 'white',  // Color del texto del campo de entrada
     },
   });
+
   
 
-export default function ModalEditarSueño() {
+  
+export default function ModalEditarSueño( {historia} ) {
+  const [estadoCategoria, setEstadoCategoria] = useState([])
+  const [estadoPublico, setEstadoPublico] = useState(false)
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  
+  const { handleSubmit, handleChange } = useFormik({
+    initialValues: {
+      mensaje: ""
+    },
+    onSubmit: (data) => {
+      const objeto = {
+        mensaje: data,
+        categorias: [...estadoCategoria],
+        publico: estadoPublico,
+        date: serverTimestamp(),
+      }
+      event.preventDefault();
+      console.log({objeto})
+      setEstadoCategoria([])
+      // CREAR LA EN ORDEN FIREBASE
+        const docRef = doc(db, "historias", historia.id);
+         updateDoc(docRef, objeto)
+         handleClose()
+         Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Historia editada ! ",
+          showConfirmButton: true,
+          timer: 3500,
+        });
+
+        console.log({objeto})   
+    },
+    validateOnChange: false      
+})
+
   return (
     <div>
       <div onClick={()=>handleOpen()}>
@@ -72,7 +114,7 @@ export default function ModalEditarSueño() {
             ¿Qué soñaste?
           </Typography>
        
-          <form className='formulario__modalEditar'>
+          <form onSubmit={handleSubmit} className='formulario__modalEditar'>
             <StyledTextField
       multiline
       minRows={3}
@@ -80,23 +122,25 @@ export default function ModalEditarSueño() {
       fullWidth
       variant="outlined"
       placeholder='Soñé que...'
+      name='mensaje'
+      onChange={handleChange}
     />
  <FormControl>
   <h3>Elige alguna categoría</h3>
   <div className='tarjetas__filtro'>
-  <TarjetaFiltro text={"Caía"} />
-  <TarjetaFiltro text={"Volaba"} />
-  <TarjetaFiltro text={"Me perseguían"} />
-  <TarjetaFiltro text={"Era otra persona"} />
-  <TarjetaFiltro text={"Peleaba"} />
-  <TarjetaFiltro text={"Veía un muerto"} />
+  <TarjetaFiltro estadoCategoria={estadoCategoria} setEstadoCategoria={setEstadoCategoria} text={"Caía"} />
+  <TarjetaFiltro estadoCategoria={estadoCategoria} setEstadoCategoria={setEstadoCategoria} text={"Volaba"} />
+  <TarjetaFiltro estadoCategoria={estadoCategoria} setEstadoCategoria={setEstadoCategoria} text={"Me perseguían"} />
+  <TarjetaFiltro estadoCategoria={estadoCategoria} setEstadoCategoria={setEstadoCategoria} text={"Era otra persona"} />
+  <TarjetaFiltro estadoCategoria={estadoCategoria} setEstadoCategoria={setEstadoCategoria} text={"Peleaba"} />
+  <TarjetaFiltro estadoCategoria={estadoCategoria} setEstadoCategoria={setEstadoCategoria} text={"Veía un muerto"} />
   </div>
 
-<RadioGroup />
+<RadioGroup estadoPublico={estadoPublico} setEstadoPublico={setEstadoPublico} />
 </FormControl>
           <div className='container__buttonsForm'>
             <Boton text={"cancelar"} />
-            <Boton text={"Editar"}  />
+            <Boton type={"submit"} text={"Editar"}  />
           </div>
           </form>
         </div>
