@@ -11,12 +11,10 @@
     flex-direction: column;
     position: relative;
 }
-
 .tarjetaHistoria__user__info{
     display: flex;
     flex-direction: column; 
 }
-
 .tarjetaHistoria__mensaje{
     color: white;
     width: 100%;
@@ -26,7 +24,6 @@
     overflow-wrap: break-word; /* O word-wrap: break-word; */
     word-break: break-all;
 }
-
 
 .tarjetaHistoria__botonClose{
     position: absolute;
