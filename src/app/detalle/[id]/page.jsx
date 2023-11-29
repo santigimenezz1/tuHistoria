@@ -10,14 +10,15 @@ import { addDoc, collection, doc, getDoc, query, where } from 'firebase/firestor
 import { db } from '@/firebaseConfig'
 import { useEffect, useState } from 'react'
 
- function Detalle ( {params} ){
+ async function Detalle ( {params} ){
   const [estado, setEstado] = useState(null);
+  const id = await params.id
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         // Obtener la referencia al documento
-        const historiaRef = doc(db, 'historias', params.id);
+        const historiaRef = doc(db, 'historias', id);
 
         // Obtener el documento
         const historiaDoc = await getDoc(historiaRef);
@@ -49,7 +50,7 @@ import { useEffect, useState } from 'react'
             </div>
             <TarjetaDetalle estado={estado} />
                 <TarjetaIlustraciones />
-            <Chat params={params} />
+            <Chat id={id} />
         </div>
             
     )

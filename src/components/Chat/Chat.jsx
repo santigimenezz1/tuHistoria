@@ -6,9 +6,9 @@ import { addDoc, doc, updateDoc } from "firebase/firestore"
 import { db } from "@/firebaseConfig"
 import { useState } from "react"
 
-const Chat = ( {params} ) =>{
+const Chat = ( {id} ) =>{
   const enviarMensaje = async () => {
-    const docRef = doc(db, "historias", params.id);
+    const docRef = doc(db, "historias", id);
 
     try {
       const sendMesage = await updateDoc(docRef, { comentarios: [ "hola", "hola santiago, como estas?"] });
