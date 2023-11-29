@@ -30,13 +30,11 @@ function TarjetaHistoria ( {historia, text} ){
                 </div>
             </div>
                 <div className='tarjetaHistoria__mensaje'>
+                    
                   {
                        historia &&
-                       <span>{historia.mensaje.mensaje}</span>
+                           <span>{historia.mensaje.mensaje}</span>
                        }
-
-                    
-
                 </div>
 
         </div>

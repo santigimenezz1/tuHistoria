@@ -23,7 +23,11 @@
     padding: 10px;
     font-weight: bold;
     font-size: 18px;
+    overflow-wrap: break-word; /* O word-wrap: break-word; */
+    word-break: break-all;
 }
+
+
 .tarjetaHistoria__botonClose{
     position: absolute;
     top: 5%;
