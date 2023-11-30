@@ -1,5 +1,4 @@
 .detalle{
-    border: 1px solid white;
     width: 100%;
     height: auto;
     overflow-y: auto;
@@ -16,5 +15,8 @@
 
 .detalle__chat{
     width: 100%;
+    padding: 10px;
+}
+.detalle__botonVolver{
     padding: 10px;
 }

@@ -7,6 +7,8 @@ import Chat from "@/components/Chat/Chat"
 import { db } from "@/firebaseConfig"
 import { doc, getDoc, onSnapshot } from "firebase/firestore"
 import { useEffect, useState } from "react"
+import BotonVolver from "@/components/BotonVolver/BotonVolver"
+import Link from "next/link"
 
 async function obtenerDetalle(params) {
     const docRef = doc(db, "historias", params.id);
@@ -36,6 +38,11 @@ async function obtenerDetalle(params) {
         <div className="detalle">
         <div className='fondoDinamico'>
                 <FondoDinamico />
+            </div>
+            <div className="detalle__botonVolver">
+                <Link href={'/'}>
+            <BotonVolver />
+                </Link>
             </div>
         <div className="container__detalle">
             <div className="detalle__tarjetaDetalle">
