@@ -40,7 +40,6 @@ const Mensaje = ()=>{
                     </div>
                     <div className='container__chat__input'>
                         <div className='container__chat__input__input'>
-                      <InputEnviarMensaje />
                         </div>
                       <button>Enviar</button>
                     </div>
