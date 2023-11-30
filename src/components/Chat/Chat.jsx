@@ -18,7 +18,16 @@ const Chat = ( {data, params} ) =>{
     }
   };
 
+  const { handleSubmit, handleChange } = useFormik({
+    initialValues: {
+      comentario: "",
+    },
+    onSubmit: (data) => {
+      console.log({data})
 
+    },
+    validateOnChange: false      
+})
 
 
     return (
@@ -31,10 +40,10 @@ const Chat = ( {data, params} ) =>{
                         ))
                       }
                     </div>
-                    <form  className='container__input'>
+                    <form onSubmit={handleSubmit} className='container__input'>
                         <div className='container__chat__input__input'>
                         <div className="inputEnviarMensaje" >
-                             <input  name="comentario" placeholder='Escribe tu mensaje...' type="text"></input>
+                             <input onChange={handleChange} name="comentario" placeholder='Escribe tu mensaje...' type="text"></input>
                           </div>
                         </div>
                       <button>Enviar</button>
