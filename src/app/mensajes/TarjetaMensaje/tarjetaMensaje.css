@@ -4,6 +4,7 @@
     display: flex;
     text-align: center;
     line-height: 50px;
+    align-self: flex-start;
     background-color: #32c7de4c;
     border: none;  
     gap: 10px;
