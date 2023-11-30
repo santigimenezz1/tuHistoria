@@ -1,14 +1,14 @@
  import ModalVerPerfil from '../ModalVerPerfil/ModalVerPerfil'
 import '../TarjetaDetalle/tarjetaDetalle.css'
-const TarjetaDetalle = ( {estado} ) =>{
+const TarjetaDetalle = ( {data} ) =>{
     return (
         <div className="tarjetaDetalle">
          <ModalVerPerfil />
          <div className='tarjetaDetalle__info'>
            {
-            estado &&
+            data &&
          <span>
-            {estado.mensaje.mensaje}
+            {data.mensaje.mensaje}
          </span>
            }
             

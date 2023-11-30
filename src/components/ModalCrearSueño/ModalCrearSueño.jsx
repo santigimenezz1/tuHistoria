@@ -64,7 +64,15 @@ export default function ModalCrearSueño() {
         categorias: [...estadoCategoria],
         publico: estadoPublico,
         date: serverTimestamp(),
-        comentarios: []
+        comentarios: ["hola como estas?",
+         "Todo bien y vos?",
+          "Todo tranquilo, por suerte",
+          "Que buen sueño!!",
+          "me gusto mucho tu sueño!",
+          "increible sueño!",
+          "hola, como estan todos hoy?",
+          "tuve un sueño muy parecido"
+        ]
       }
       event.preventDefault();
       console.log({objeto})

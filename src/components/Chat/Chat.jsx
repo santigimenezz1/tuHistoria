@@ -6,7 +6,7 @@ import { addDoc, doc, updateDoc } from "firebase/firestore"
 import { db } from "@/firebaseConfig"
 import { useState } from "react"
 
-const Chat = ( {params} ) =>{
+const Chat = ( {data, params} ) =>{
   const enviarMensaje = async () => {
     const docRef = doc(db, "historias", params.id);
 
@@ -18,14 +18,15 @@ const Chat = ( {params} ) =>{
     }
   };
 
-
     return (
         <div className="chat">
                     <div className='container__chat'>
-                        <TarjetaMensaje text={"Hola como estas?"} />
-                        <TarjetaMensaje text={"Me gustó mucho la interpretacion de tu sueño!"} />
-                        <TarjetaMensaje text={"Muchas gracias Santiago!"} />
-                        <TarjetaMensaje text={"De nada, nos vemos!"} />
+                      {
+                        data &&
+                        data.comentarios.map((comentario, index)=>(
+                          <TarjetaMensaje comentario={comentario} key={index} />
+                        ))
+                      }
                     </div>
                     <div className='container__input'>
                         <div className='container__chat__input__input'>

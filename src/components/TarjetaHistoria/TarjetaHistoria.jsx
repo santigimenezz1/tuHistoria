@@ -18,7 +18,7 @@ function TarjetaHistoria ( {historia, text} ){
     console.log({historia})
     return (
         <div className="tarjetaHistoria">
-            <Link href={`/detalle`}>
+            <Link href={`/detalle/${historia.id}`}>
             <button className='tarjetaHistoria__detalle'>Detalle</button>
             </Link>
             <div className='tarjetaHistoria__perfil'>
