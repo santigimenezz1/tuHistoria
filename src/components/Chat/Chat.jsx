@@ -1,29 +1,35 @@
  "use client"
 import TarjetaMensaje from "@/app/mensajes/TarjetaMensaje/TarjetaMensaje"
 import '../Chat/chat.css'
-import { addDoc, doc, updateDoc } from "firebase/firestore"
+import { addDoc, doc, getDoc, updateDoc } from "firebase/firestore"
 import { db } from "@/firebaseConfig"
 import { useState } from "react"
 import { useFormik } from "formik"
 
 const Chat = ( {data, params} ) =>{
+  const agregarComentario = async (text) => {
+    const docRef = doc(db, "historias", params.id);
+    const objeto = await getDoc(docRef);
+    const data = objeto.data();
+    const comentarios = data.comentarios || []; 
+      await updateDoc(docRef, { comentarios: [...comentarios, text] });
+  }; 
   const { handleSubmit, handleChange } = useFormik({
     initialValues: {
       comentario: "",
     },
     onSubmit: (data) => {
-      console.log({data})
+      console.log(data)
+      agregarComentario(data.comentario)
 
     },
     validateOnChange: false      
 })
-
-
     return (
         <div className="chat">
                     <div className='container__chat'>
                       {
-                        data &&
+                        data && 
                         data.comentarios.map((comentario, index)=>(
                           <TarjetaMensaje comentario={comentario} key={index} />
                         ))

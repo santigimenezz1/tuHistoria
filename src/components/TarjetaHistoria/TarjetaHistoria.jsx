@@ -15,7 +15,6 @@ import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 function TarjetaHistoria ( {historia, text} ){
     
-    console.log({historia})
     return (
         <div className="tarjetaHistoria">
             <Link href={`/detalle/${historia.id}`}>

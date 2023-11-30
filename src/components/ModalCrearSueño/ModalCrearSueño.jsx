@@ -64,18 +64,9 @@ export default function ModalCrearSueño() {
         categorias: [...estadoCategoria],
         publico: estadoPublico,
         date: serverTimestamp(),
-        comentarios: ["hola como estas?",
-         "Todo bien y vos?",
-          "Todo tranquilo, por suerte",
-          "Que buen sueño!!",
-          "me gusto mucho tu sueño!",
-          "increible sueño!",
-          "hola, como estan todos hoy?",
-          "tuve un sueño muy parecido"
-        ]
+        comentarios: []
       }
       event.preventDefault();
-      console.log({objeto})
       setEstadoCategoria([])
       // CREAR LA EN ORDEN FIREBASE
          const ordersCollection = collection(db, "historias");

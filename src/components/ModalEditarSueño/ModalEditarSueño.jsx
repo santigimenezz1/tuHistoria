@@ -76,7 +76,6 @@ export default function ModalEditarSueño( {historia} ) {
         date: serverTimestamp(),
       }
       event.preventDefault();
-      console.log({objeto})
       setEstadoCategoria([])
       // CREAR LA EN ORDEN FIREBASE
         const docRef = doc(db, "historias", historia.id);
@@ -90,7 +89,6 @@ export default function ModalEditarSueño( {historia} ) {
           timer: 3500,
         });
 
-        console.log({objeto})   
     },
     validateOnChange: false      
 })

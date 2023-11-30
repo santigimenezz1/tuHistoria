@@ -17,7 +17,6 @@ const LayoutTarjetasHome = ()=>{
       return () => unsubscribe();
     }, []);
 
-    console.log({historias})
     return (
         <>
         {

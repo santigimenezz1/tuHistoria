@@ -1,23 +1,37 @@
-
+ "use client"
 import FondoDinamico from "@/components/FondoDinamico/FondoDinamico"
 import TarjetaDetalle from "@/components/TarjetaDetalle/TarjetaDetalle"
 import '../[id]/detalle.css'
 import TarjetaIlustraciones from "@/components/TarjetaIlustraciones/TarjetaIlustraciones"
 import Chat from "@/components/Chat/Chat"
 import { db } from "@/firebaseConfig"
-import { doc, getDoc } from "firebase/firestore"
+import { doc, getDoc, onSnapshot } from "firebase/firestore"
+import { useEffect, useState } from "react"
 
-async function obtenerDetalle (params) {
-     const docRef =  doc(db, "historias", params.id)
-     const objeto = await getDoc(docRef)
-     const data = objeto.data()
-     return data
- }
+async function obtenerDetalle(params) {
+    const docRef = doc(db, "historias", params.id);
+    const objeto = await getDoc(docRef);
+    const data = objeto.data();
+    return data;
+  }
+  
+  function Detalle({ params }) {
+    const [data, setData] = useState(null);
 
-async function Detalle ( {params} ){
-    
-    let data = await obtenerDetalle(params)
-
+    useEffect(() => {
+      const fetchData = async () => {
+        let fetchedData = await obtenerDetalle(params);
+        setData(fetchedData);
+      };
+      fetchData();
+      const docRef = doc(db, "historias", params.id);
+      const unsubscribe = onSnapshot(docRef, (snapshot) => {
+        const updatedData = snapshot.data();
+        setData(updatedData);
+      });
+  
+      return () => unsubscribe();
+    }, [params.id]);
     return (
         <div className="detalle">
         <div className='fondoDinamico'>
