@@ -33,7 +33,7 @@ export default function ModalVerPerfil() {
     <div>
       <div onClick={()=>handleOpen()}>
       <div className='tarjetaHistoria__user'>
-                <img src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
+                <img alt={"imagen"} src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
                 <div className='tarjetaHistoria__user__info'>
                 <h4>Santidev</h4>
                 <h5>Hace 6 horas</h5>
@@ -51,7 +51,7 @@ export default function ModalVerPerfil() {
           <CloseIcon />
           </div>
           <div className='container__modalEditar__Perfil'>
-            <img src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915236/tu%20historia/premium_photo-1687832783320-35671afbf484_ogghp1.jpg'></img>
+            <img alt={"imagen"} src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915236/tu%20historia/premium_photo-1687832783320-35671afbf484_ogghp1.jpg'></img>
             <h1>Santiago gimenez</h1>
             <h3>Se unio el 26/3/2022</h3>
           </div>

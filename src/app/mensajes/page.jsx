@@ -27,7 +27,7 @@ const Mensaje = ()=>{
                 </div>
                 <div className='container__chat'>
                     <div className='container__chat__header'>
-                        <img  src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
+                        <img alt={"imagen"}  src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
                         <h1>Santiago gimenez</h1>
                     </div>
                     <div className='container__chat__contenedorMensajes'>
