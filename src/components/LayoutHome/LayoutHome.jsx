@@ -29,7 +29,7 @@ const LayoutHome = ()=>{
   <div className='home__user'>
     <div className="container__usuario">
     <div style={{display:"flex", gap:"10px", alignItems:"center", borderBottom:"1px solid white", paddingBottom:"15px"}}>
-    <img alt={"imagen"} src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
+    <img alt= "imagen" alt={"imagen"} src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
     <h1>Santidev</h1>
     </div>
 
