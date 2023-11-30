@@ -8,5 +8,4 @@ const TarjetaIlustraciones = ()=>{
         </div>
     )
 }
-
 export default TarjetaIlustraciones
