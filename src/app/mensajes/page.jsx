@@ -1,6 +1,5 @@
  import BotonVolver from '@/components/BotonVolver/BotonVolver'
 import '../mensajes/mensajes.css'
-import InputEnviarMensaje from './InputEnviarMensaje/InputEnviarMensaje'
 import TarjetaMensaje from './TarjetaMensaje/TarjetaMensaje'
 import TarjetaUsuarioMensaje from './TarjetaUsuarioMensaje/TarjetaUsuarioMensaje'
 import Link from 'next/link'

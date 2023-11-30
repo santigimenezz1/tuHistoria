@@ -64,3 +64,14 @@
     display: flex;
     gap: 10px;
 }
+
+
+.inputEnviarMensaje input {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.418);
+    color: white;
+    padding-left: 10px;
+    border-radius: 4px;
+    border: none;
+}

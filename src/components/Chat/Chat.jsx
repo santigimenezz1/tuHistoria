@@ -1,10 +1,10 @@
  "use client"
-import InputEnviarMensaje from "@/app/mensajes/InputEnviarMensaje/InputEnviarMensaje"
 import TarjetaMensaje from "@/app/mensajes/TarjetaMensaje/TarjetaMensaje"
 import '../Chat/chat.css'
 import { addDoc, doc, updateDoc } from "firebase/firestore"
 import { db } from "@/firebaseConfig"
 import { useState } from "react"
+import { useFormik } from "formik"
 
 const Chat = ( {data, params} ) =>{
   const enviarMensaje = async () => {
@@ -18,6 +18,18 @@ const Chat = ( {data, params} ) =>{
     }
   };
 
+  const { handleSubmit, handleChange } = useFormik({
+    initialValues: {
+      comentario: "",
+    },
+    onSubmit: (data) => {
+      console.log({data})
+
+    },
+    validateOnChange: false      
+})
+
+
     return (
         <div className="chat">
                     <div className='container__chat'>
@@ -28,12 +40,14 @@ const Chat = ( {data, params} ) =>{
                         ))
                       }
                     </div>
-                    <div className='container__input'>
+                    <form onSubmit={handleSubmit} className='container__input'>
                         <div className='container__chat__input__input'>
-                      <InputEnviarMensaje params={params} />
+                        <div className="inputEnviarMensaje" >
+                             <input onChange={handleChange} name="comentario" placeholder='Escribe tu mensaje...' type="text"></input>
+                          </div>
                         </div>
-                      <button onClick={()=>enviarMensaje()}>Enviar</button>
-                    </div>
+                      <button>Enviar</button>
+                    </form>
         </div>
     )
 }
