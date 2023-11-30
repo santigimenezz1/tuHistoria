@@ -17,7 +17,6 @@ async function obtenerDetalle (params) {
 async function Detalle ( {params} ){
     
     let data = await obtenerDetalle(params)
-    console.log({data})
 
     return (
         <div className="detalle">
@@ -32,7 +31,7 @@ async function Detalle ( {params} ){
                 <TarjetaIlustraciones />
             </div>
             <div className="detalle__chat">
-                <Chat data={data}/>
+                <Chat data={data} params={params}/>
             </div>
         </div>
         </div>
