@@ -21,12 +21,12 @@ const Favoritos = ({ children }) => {
   }, []); // El segundo parámetro vacío significa que este efecto se ejecutará solo una vez al montar el componente
 
   return (
-    <div className='misSuenios'>
-      <div className='misSuenios__text'>
+    <div className='misSuenios__favoritos'>
+      <div className='misSuenios__favoritos__text'>
         <h1>Tus sueños</h1>
         <h2>Cantidad de sueños: {historias.length}</h2>
       </div>
-      <div className='misSuenios__tarjetas'>
+      <div className='misSuenios__favoritos__tarjetas'>
         {historias.map((historia, index) => (
           <TarjetaHistoria key={index} historia={historia} />
         ))}

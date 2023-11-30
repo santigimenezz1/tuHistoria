@@ -1,28 +1,28 @@
-.misSuenios{
+.misSuenios__favoritos{
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    padding: 100px;
-    margin: 100px;
-    
+    margin-top: 100px;
+    margin-right: 100px;
+
 }
 
-.misSuenios::-webkit-scrollbar {
+.misSuenios__favoritos::-webkit-scrollbar {
     width: 16px; /* Ancho del scrollbar */
 }
 
-.misSuenios::-webkit-scrollbar-thumb {
+.misSuenios__favoritos::-webkit-scrollbar-thumb {
     background-color: rgba(128, 0, 128, 0.757); /* Color del thumb (la parte móvil) */
 }
 
-.misSuenios::-webkit-scrollbar-track {
+.misSuenios__favoritos::-webkit-scrollbar-track {
     background-color: black; /* Color del track (la parte fija) */
 }
 
-.misSuenios__text{
+.misSuenios__favoritos__text{
     width: 100%;
     color: white;
     display: flex;
@@ -34,10 +34,10 @@
 
 }
 
-.misSuenios__text h2{
+.misSuenios__favoritos__text h2{
     font-size: 15px;
 }
-.misSuenios__tarjetas{
+.misSuenios__favoritos__tarjetas{
     display: flex;
     flex-direction: column;
     gap: 30px;
