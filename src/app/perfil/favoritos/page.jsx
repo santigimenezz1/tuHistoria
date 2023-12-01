@@ -23,7 +23,7 @@ const Favoritos = ({ children }) => {
   return (
     <div className='misSuenios__favoritos'>
       <div className='misSuenios__favoritos__text'>
-        <h1>Tus sueños</h1>
+        <h1>Tus Favoritos</h1>
         <h2>Cantidad de sueños: {historias.length}</h2>
       </div>
       <div className='misSuenios__favoritos__tarjetas'>
