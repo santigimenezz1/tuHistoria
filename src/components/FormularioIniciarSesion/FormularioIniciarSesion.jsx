@@ -4,11 +4,14 @@ import TarjetaGoogle from './TarjetaGoogle/TarjetaGoogle'
 import '../FormularioIniciarSesion/formularioIniciarSesion.css'
 import { useFormik } from 'formik'
 import Swal from 'sweetalert2'
-import { login } from '@/firebaseConfig'
+import { db, login } from '@/firebaseConfig'
 import ModalRecuperarPassword from '../ModalRecuperarPassword/ModalRecuperarPassword'
+import { createContext, useContext } from 'react'
+import { CreateContext } from '@/Context/context'
+import { collection, getDocs } from 'firebase/firestore'
 
 const FormularioIniciarSesion = () => {
-
+  const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
   const { handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",
@@ -18,7 +21,6 @@ const FormularioIniciarSesion = () => {
       try {
         const resultado = await login(data);
         if (resultado.user) {
-          // Instead of storing in localStorage, you might want to consider more secure options
           setTimeout(() => {
             Swal.fire({
               position: "center",
@@ -28,6 +30,21 @@ const FormularioIniciarSesion = () => {
               timer: 3500,
             });
           }, 2000);
+          const buscarUsuario = async () => {
+            try {
+              const ref = collection(db, "usuarios");
+              const snapshot = await getDocs(ref);
+          
+              snapshot.forEach((doc) => {
+                const data = doc.data();
+                setUsuarioOn(data)
+              });
+            } catch (error) {
+              console.error("Error al buscar usuarios:", error);
+              // Maneja el error de manera apropiada, muestra una alerta o regístralo
+            }
+          };
+          buscarUsuario()
         } 
       } catch (error) {
         Swal.fire({
@@ -42,6 +59,8 @@ const FormularioIniciarSesion = () => {
     },
     validateOnChange: false,
   });
+
+  console.log(usuarioOn)
 
   return (
     <div className="formularioIniciarSesion">

@@ -1,3 +1,4 @@
+ "use client"
 import FondoDinamico from "../FondoDinamico/FondoDinamico"
 import ModalCrearSueño from "../ModalCrearSueño/ModalCrearSueño"
 import '../LayoutHome/layoutHome.css'
@@ -5,6 +6,9 @@ import FiltrosBusqueda from "../FiltrosBusqueda/FiltrosBusqueda"
 import ModalPerfilResponsive from "../ModalPerfilResponsive/ModalPerfilResponsive"
 import ModalFiltroResponsive from "../ModalFiltroResponsive/ModalFiltroResponsive"
 import LayoutTarjetasHome from "../LayoutTarjetasHome/LayoutTarjetasHome"
+import { useContext } from "react"
+import { CreateContext } from "@/Context/context"
+import LayoutLoginUsuario from "../LayoutLoginUsuario/LayoutLoginUsuario"
 
 const { default: Link } = require("next/link")
 const { default: TarjetaEnlaceHome } = require("../TarjetaEnlaceHome/TarjetaEnlaceHome")
@@ -12,9 +16,22 @@ const { default: TarjetaHistoria } = require("../TarjetaHistoria/TarjetaHistoria
 const { default: TarjetaFiltro } = require("../TarjetaFiltro/TarjetaFiltro")
 
 const LayoutHome = ()=>{
+  const {usuarioOn} = useContext(CreateContext)
+  const isUsuarioOnEmpty = Object.keys(usuarioOn).length === 0;
+
+
+  console.log({usuarioOn})
     return (
       <>
-        <div className='container__home'> 
+        <div className='fondoDinamico'>
+        <FondoDinamico />
+    </div>
+
+      {
+        isUsuarioOnEmpty ?
+          <LayoutLoginUsuario />           
+          : (
+        <div className='container__home'>
         <div className="container__filtroBusqueda">
           <FiltrosBusqueda />
         </div>
@@ -53,8 +70,9 @@ const LayoutHome = ()=>{
     
   </div>
     </div> 
-
     </div>
+          )
+      }
       </>
 
 
