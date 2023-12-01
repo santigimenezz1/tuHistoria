@@ -47,7 +47,7 @@ const LayoutHome = ()=>{
     <div className="container__usuario">
     <div style={{display:"flex", gap:"10px", alignItems:"center", borderBottom:"1px solid white", paddingBottom:"15px"}}>
     <img alt= "imagen" src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
-    <h1>Santidev</h1>
+    <h1>{usuarioOn.nombre} {usuarioOn.apellido}</h1>
     </div>
 
     <div style={{ width:"20vw",display:"flex", flexDirection:"column", borderBottom:"1px solid white", padding:"15px"}}>
