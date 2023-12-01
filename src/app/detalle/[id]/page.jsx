@@ -6,9 +6,10 @@ import TarjetaIlustraciones from "@/components/TarjetaIlustraciones/TarjetaIlust
 import Chat from "@/components/Chat/Chat"
 import { db } from "@/firebaseConfig"
 import { doc, getDoc, onSnapshot } from "firebase/firestore"
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import BotonVolver from "@/components/BotonVolver/BotonVolver"
 import Link from "next/link"
+import ContextoGlobal, { CreateContext } from "@/Context/context"
 
 async function obtenerDetalle(params) {
     const docRef = doc(db, "historias", params.id);
@@ -18,6 +19,7 @@ async function obtenerDetalle(params) {
   }
   
   function Detalle({ params }) {
+    const {usuarioOn} = useContext(CreateContext)
     const [data, setData] = useState(null);
 
     useEffect(() => {
@@ -32,6 +34,7 @@ async function obtenerDetalle(params) {
         setData(updatedData);
       });
   
+      console.log({usuarioOn})
       return () => unsubscribe();
     }, [params.id]);
     return (

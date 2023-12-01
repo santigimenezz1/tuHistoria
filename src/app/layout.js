@@ -18,11 +18,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className='container__app'> 
         <ContextoGlobal>
+        <div className='container__app'> 
         {children}
-        </ContextoGlobal>
         </div>
+        </ContextoGlobal>
         </body>
     </html>
   )
