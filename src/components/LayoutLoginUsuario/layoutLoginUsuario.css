@@ -4,7 +4,7 @@
     align-items: center;
     gap: 50px;
     display: flex;
-    border: 2px solid white;
+    overflow-x: hidden;
 }
 
 
@@ -14,7 +14,6 @@
         gap: 50px;
         display: flex;
         flex-direction: column;
-        border: 2px solid white;
         justify-content: start;
         padding: 50px;
         overflow-y: auto;
