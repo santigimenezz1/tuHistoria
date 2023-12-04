@@ -7,9 +7,12 @@ import { auth, create, db } from '@/firebaseConfig'
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 import { useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
+import Loading from '../Loading/Loading'
 
 const FormularioRegistro = () => {
     const [open, setOpen] = useState(false);
+    const [estadoLoading, setEstadoLoading] = useState(false)
+
 
     const { handleChange, handleSubmit, errors, resetForm } = useFormik({
         initialValues: {
@@ -20,9 +23,13 @@ const FormularioRegistro = () => {
         },
         onSubmit: async (data) => {
             create()
+            setEstadoLoading(true)
             try {
                 const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
                 await addDoc(collection(db, "usuarios"), data);
+                setTimeout(() => {
+                    setEstadoLoading(false)
+                  }, 3000);
                 setTimeout(() => {
                     Swal.fire({
                         position: "center",
@@ -32,6 +39,7 @@ const FormularioRegistro = () => {
                         timer: 3500,
                     });
                 }, 3000);
+
                 resetForm()
             } catch (createError) {
                 const errorCode = createError.code;
@@ -60,6 +68,12 @@ const FormularioRegistro = () => {
     return (
         <div className="formularioIniciarSesion">
             <form onSubmit={handleSubmit} className='formulario__iniciarSesion'>
+            {
+          estadoLoading &&
+        <div className='loading__login'>
+      <Loading />
+        </div>
+        }
                 <h1>Registrate</h1>
                 <div className='inputs__formulario'>
                     <input onChange={handleChange} name='nombre' placeholder='Nombre'></input>

@@ -6,12 +6,14 @@ import { useFormik } from 'formik'
 import Swal from 'sweetalert2'
 import { db, login } from '@/firebaseConfig'
 import ModalRecuperarPassword from '../ModalRecuperarPassword/ModalRecuperarPassword'
-import { createContext, useContext } from 'react'
+import { createContext, useContext, useState } from 'react'
 import { CreateContext } from '@/Context/context'
 import { collection, getDoc, getDocs, query, where } from 'firebase/firestore'
+import Loading from '../Loading/Loading'
 
 const FormularioIniciarSesion = () => {
   const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
+  const [estadoLoading, setEstadoLoading] = useState(false)
   const { handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: "",
@@ -20,6 +22,7 @@ const FormularioIniciarSesion = () => {
     async onSubmit(data) {
       try {
         const resultado = await login(data);
+        setEstadoLoading(true)
         if (resultado.user) {
           setTimeout(() => {
             Swal.fire({
@@ -30,7 +33,9 @@ const FormularioIniciarSesion = () => {
               timer: 3500,
             });
           }, 2000);
-          console.log({data})
+          setTimeout(() => {
+            setEstadoLoading(false)
+          }, 3000);
           const buscarUsuario = async (email) => {
             try {
               const ref = collection(db, "usuarios");
@@ -66,6 +71,12 @@ const FormularioIniciarSesion = () => {
   return (
     <div className="formularioIniciarSesion">
       <form onSubmit={handleSubmit} className="formulario__iniciarSesion">
+        {
+          estadoLoading &&
+        <div className='loading__login'>
+      <Loading />
+        </div>
+        }
         <h1>Ingresa con...</h1>
         <TarjetaGoogle />
         <div className="inputs__formulario">

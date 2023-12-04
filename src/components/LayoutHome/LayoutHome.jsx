@@ -6,7 +6,7 @@ import FiltrosBusqueda from "../FiltrosBusqueda/FiltrosBusqueda"
 import ModalPerfilResponsive from "../ModalPerfilResponsive/ModalPerfilResponsive"
 import ModalFiltroResponsive from "../ModalFiltroResponsive/ModalFiltroResponsive"
 import LayoutTarjetasHome from "../LayoutTarjetasHome/LayoutTarjetasHome"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import { CreateContext } from "@/Context/context"
 import LayoutLoginUsuario from "../LayoutLoginUsuario/LayoutLoginUsuario"
 
@@ -21,6 +21,9 @@ const LayoutHome = ()=>{
 
 
   console.log({usuarioOn})
+  useEffect(()=>{
+
+  },[usuarioOn])
     return (
       <>
         <div className='fondoDinamico'>
@@ -28,7 +31,7 @@ const LayoutHome = ()=>{
     </div>
 
       {
-        isUsuarioOnEmpty ?
+        Object.keys(usuarioOn).length === 0 ?
           <LayoutLoginUsuario />           
           : (
         <div className='container__home'>

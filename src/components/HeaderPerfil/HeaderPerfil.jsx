@@ -8,7 +8,7 @@ import ModalEliminar from '../ModalEliminar/ModalEliminar'
 import './headerPerfil.css'
 import { CreateContext } from '@/Context/context'
 const HeaderPerfil = ()=>{
-    const {usuarioOn} = useContext(CreateContext)
+    const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
 
     console.log({usuarioOn})
     return (
@@ -30,7 +30,9 @@ const HeaderPerfil = ()=>{
 
         <div className='container__modales'>
         <ModalEditar  />
+        <div>
         <ModalEliminar text={"Salir"} />
+        </div>
         </div>
 
    

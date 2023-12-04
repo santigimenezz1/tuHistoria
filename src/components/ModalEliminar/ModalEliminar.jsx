@@ -10,6 +10,9 @@ import { TextField } from '@mui/material';
 import BotonModalEditar from '../BotonModalEditar/BotonModalEditar';
 import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
+import { useContext } from 'react';
+import { CreateContext } from '@/Context/context';
+import Link from 'next/link';
 
 const style = {
   position: 'absolute',
@@ -27,6 +30,8 @@ export default function ModalEliminar( {text} ) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
+
   return (
     <div>
       <div onClick={()=>handleOpen()}>
@@ -47,7 +52,9 @@ export default function ModalEliminar( {text} ) {
           </Typography>
           <div className='container__buttonsForm'>
             <Boton text={"cancelar"} />
+            <Link href={'/'} onClick={()=>setUsuarioOn({})}>
             <Boton text={"Salir"}  />
+            </Link>
           </div>
         </div>
        
