@@ -26,15 +26,15 @@ const LayoutHome = ()=>{
   },[usuarioOn])
     return (
       <>
-        <div className='fondoDinamico'>
-        <FondoDinamico />
-    </div>
 
       {
         Object.keys(usuarioOn).length === 0 ?
           <LayoutLoginUsuario />           
           : (
         <div className='container__home'>
+        <div className='fondoDinamico'>
+        <FondoDinamico />
+    </div>
         <div className="container__filtroBusqueda">
           <FiltrosBusqueda />
         </div>
