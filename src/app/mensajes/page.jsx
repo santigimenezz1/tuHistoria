@@ -39,7 +39,8 @@ const Mensaje = ()=>{
 
                     </div>
                     <div className='container__chat__input'>
-                        <div className='container__chat__input__input'>
+                    <input className='chat__input' type='text' placeholder='Escribe tu mensaje...'></input>
+                        <div>
                         </div>
                       <button>Enviar</button>
                     </div>
