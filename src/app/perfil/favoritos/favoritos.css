@@ -48,3 +48,56 @@
 
 
 
+
+@media screen and (max-width:1000px){
+    .misSuenios__favoritos__tarjetas{
+    width: 65vw;
+    }
+    .misSuenios__favoritos__text{
+        width: 90vw;
+        color: white;
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+        padding: 25px;
+    }
+    .misSuenios__favoritos{
+        padding-top: 50px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .misSuenios__favoritos__tarjetas{
+    width: 90vw;
+    }
+    .misSuenios__favoritos__text{
+        width: 90vw;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        padding: 10px;
+        justify-content: space-between;
+        padding: 25px;
+    }
+}
+
+@media screen and (max-width:600px){
+   
+}
+
+@media screen and (max-width:460px){
+    .misSuenios__favoritos__tarjetas{
+    width: 80vw;
+    }
+    .misSuenios__favoritos{
+        padding-top: 0px;
+    }
+}
+
+
+
+
+

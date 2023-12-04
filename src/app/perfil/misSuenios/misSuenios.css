@@ -40,7 +40,6 @@
     flex-direction: column;
     gap: 30px;
     width: 100%;
-
 }
 
 @media screen and (max-width:1000px){
@@ -84,7 +83,10 @@
 
 @media screen and (max-width:460px){
     .misSuenios__tarjetas{
-    width: 85vw;
+    width: 80vw;
+    }
+    .misSuenios{
+        padding-top: 0px;
     }
 }
 
