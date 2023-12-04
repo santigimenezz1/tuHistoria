@@ -27,7 +27,7 @@ const FormularioRegistro = () => {
                     Swal.fire({
                         position: "center",
                         icon: "success",
-                        title: "Bienvenido, contanos tu historia :)  ",
+                        title: "Tu cuenta fue creada, iniciá sesión :)  ",
                         showConfirmButton: true,
                         timer: 3500,
                     });

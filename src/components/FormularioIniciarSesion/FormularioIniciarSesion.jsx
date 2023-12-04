@@ -8,7 +8,7 @@ import { db, login } from '@/firebaseConfig'
 import ModalRecuperarPassword from '../ModalRecuperarPassword/ModalRecuperarPassword'
 import { createContext, useContext } from 'react'
 import { CreateContext } from '@/Context/context'
-import { collection, getDocs } from 'firebase/firestore'
+import { collection, getDoc, getDocs, query, where } from 'firebase/firestore'
 
 const FormularioIniciarSesion = () => {
   const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
@@ -30,12 +30,13 @@ const FormularioIniciarSesion = () => {
               timer: 3500,
             });
           }, 2000);
-          const buscarUsuario = async () => {
+          console.log({data})
+          const buscarUsuario = async (email) => {
             try {
               const ref = collection(db, "usuarios");
-              const snapshot = await getDocs(ref);
-          
-              snapshot.forEach((doc) => {
+              const q = query(ref, where("email", "==", email));
+              const querySnapshot = await getDocs(q);
+              querySnapshot.forEach((doc) => {
                 const data = doc.data();
                 setUsuarioOn(data)
               });
@@ -44,7 +45,7 @@ const FormularioIniciarSesion = () => {
               // Maneja el error de manera apropiada, muestra una alerta o regístralo
             }
           };
-          buscarUsuario()
+          buscarUsuario(data.email)
         } 
       } catch (error) {
         Swal.fire({

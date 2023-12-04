@@ -43,7 +43,6 @@ export const create = async ({ email, password }) => {
       const res = await createUserWithEmailAndPassword(auth, email, password);
       return res;
     } catch (error) {
-      return { error: error.message };
     }
   }
 };
