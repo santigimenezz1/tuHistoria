@@ -1,0 +1,56 @@
+.tarjetaHistoria{
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    background-color: #32c7de4c;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.tarjetaHistoria__user__info{
+    display: flex;
+    flex-direction: column; 
+}
+.tarjetaHistoria__mensaje{
+    color: white;
+    width: 100%;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    overflow-wrap: break-word; /* O word-wrap: break-word; */
+    word-break: break-all;
+}
+
+.tarjetaHistoria__botonClose{
+    position: absolute;
+    top: 5%;
+    right: 2%;
+}
+.tarjetaHistoria__buttons{
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 8px;
+}
+
+.tarjetaHistoria__perfil{
+    width: 170px;
+}
+.tarjetaHistoria__detalle{
+    width: 100px;
+    padding: 5px;
+    border-radius: 4px;
+    border:none;
+    margin-bottom: 15px;
+    cursor: pointer;
+    background-color: rgba(0, 255, 255, 0.274);
+    color: white;
+    letter-spacing: 1px;
+    transition: all .2s;
+}
+.tarjetaHistoria__detalle:hover{
+    background-color: rgba(0, 255, 255, 0.421); 
+}

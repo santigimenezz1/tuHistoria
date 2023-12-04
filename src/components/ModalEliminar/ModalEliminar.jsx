@@ -48,12 +48,14 @@ export default function ModalEliminar( {text} ) {
           <CloseIcon />
           </div>
           <Typography style={{textAlign:"center", fontSize:"22px"}} id="modal-modal-description" sx={{ mt: 2 }}>
-            {"Salir"}
+            {"¿Quieres cerrar tu sesión?"}
           </Typography>
           <div className='container__buttonsForm'>
+            <div onClick={()=>handleClose()}>
             <Boton text={"cancelar"} />
+            </div>
             <Link href={'/'} onClick={()=>setUsuarioOn({})}>
-            <Boton text={"Salir"}  />
+            <Boton text={"Cerrar"}  />
             </Link>
           </div>
         </div>

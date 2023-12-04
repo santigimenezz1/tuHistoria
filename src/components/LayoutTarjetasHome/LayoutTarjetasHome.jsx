@@ -3,6 +3,7 @@
 import { db } from "@/firebaseConfig";
 import { collection, onSnapshot } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import TarjetaHistoriaHome from "../TarjetaHistoriaHome/TarjetaHistoriaHome";
 
 const { default: TarjetaHistoria } = require("../TarjetaHistoria/TarjetaHistoria")
 
@@ -21,7 +22,7 @@ const LayoutTarjetasHome = ()=>{
         <>
         {
         historias.filter((historia)=>historia.publico === true).map((historia, index) => (
-          <TarjetaHistoria  key={index} historia={historia} />
+          <TarjetaHistoriaHome  key={index} historia={historia} />
         ))
         }
         </>
