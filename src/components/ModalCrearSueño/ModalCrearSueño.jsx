@@ -24,7 +24,8 @@ import SelectRadio from './SelectRadio/SelectRadio';
 import { useFormik } from 'formik';
 import { useState } from 'react';
 import { db } from '@/firebaseConfig';
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+
+import { addDoc,where, collection, doc, getDoc, getDocs, query, serverTimestamp, updateDoc } from 'firebase/firestore';
 import Swal from 'sweetalert2';
 import { useContext } from 'react';
 import { CreateContext } from '@/Context/context';
@@ -68,16 +69,23 @@ export default function ModalCrearSueño() {
         categorias: [...estadoCategoria],
         publico: estadoPublico,
         date: serverTimestamp(),
-        comentarios: []
+        comentarios: [],
+        user: {usuarioOn}
+      };
+
+      const objetoUser = {
+        mensaje: data,
+        categorias: [...estadoCategoria],
+        publico: estadoPublico,
+        comentarios: [],
+        user: {usuarioOn}
       };
   
       try {
         // CREAR EN ORDEN EN FIREBASE
         const ordersCollection = collection(db, "historias");
         await addDoc(ordersCollection, objeto);
-  
         handleClose();
-  
         Swal.fire({
           position: "center",
           icon: "success",
@@ -85,17 +93,35 @@ export default function ModalCrearSueño() {
           showConfirmButton: true,
           timer: 3500,
         });
-  
-        // Buscar y actualizar el usuario en la colección 'usuarios'
-        const usuariosCollection = collection(db, "usuarios");
-        const usuariosQuery = query(usuariosCollection, where("email", "==", usuarioOn.email));
-        const usuariosSnapshot = await getDocs(usuariosQuery);
-  
-        usuariosSnapshot.forEach(async (doc) => {
-          // Actualiza el documento existente con el nuevo objeto
-          await addDoc(collection(usuariosCollection, doc.id, "historias"), objeto);
-        });
-      } catch (error) {
+
+
+        try {
+          const userCollection = collection(db, "usuarios");
+          const q = query(userCollection, where("email", "==", usuarioOn.email));
+          const querySnapshot = await getDocs(q);
+        
+          if (!querySnapshot.empty) {
+            // Assuming email is unique, so there should be only one document
+            const userDocRef = querySnapshot.docs[0].ref;
+        
+            const userData = querySnapshot.docs[0].data();
+            console.log("Información del usuario:", userData);
+        
+            // Update only the "historias" array, preserving other data
+            const updatedData = { ...userData, historias: [...userData.historias, objetoUser] };
+        
+            await updateDoc(userDocRef, updatedData);
+            console.log("Usuario actualizado con éxito:", updatedData);
+          } else {
+            console.log("No se encontró un usuario con el email proporcionado");
+          }
+        } catch (error) {
+          console.error("Error al obtener usuario por email:", error);
+        }
+        
+      }
+      
+      catch (error) {
         console.error("Error al agregar historia o buscar usuarios:", error);
       }
     },
