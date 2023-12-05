@@ -13,7 +13,6 @@ const FormularioRegistro = () => {
     const [open, setOpen] = useState(false);
     const [estadoLoading, setEstadoLoading] = useState(false)
 
-
     const { handleChange, handleSubmit, errors, resetForm } = useFormik({
         initialValues: {
             nombre: "",
@@ -22,24 +21,14 @@ const FormularioRegistro = () => {
             password: ""
         },
         onSubmit: async (data) => {
+            const objeto = {
+                ...data,
+                historias: []
+            }
             create()
-            setEstadoLoading(true)
             try {
                 const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
-                await addDoc(collection(db, "usuarios"), data);
-                setTimeout(() => {
-                    setEstadoLoading(false)
-                  }, 3000);
-                setTimeout(() => {
-                    Swal.fire({
-                        position: "center",
-                        icon: "success",
-                        title: "Tu cuenta fue creada, iniciá sesión :)  ",
-                        showConfirmButton: true,
-                        timer: 3500,
-                    });
-                }, 3000);
-
+                await addDoc(collection(db, "usuarios"), objeto);
                 resetForm()
             } catch (createError) {
                 const errorCode = createError.code;
@@ -64,16 +53,10 @@ const FormularioRegistro = () => {
         },
         validateOnChange: false
     });
-
     return (
         <div className="formularioIniciarSesion">
             <form onSubmit={handleSubmit} className='formulario__iniciarSesion'>
-            {
-          estadoLoading &&
-        <div className='loading__login'>
-      <Loading />
-        </div>
-        }
+           
                 <h1>Registrate</h1>
                 <div className='inputs__formulario'>
                     <input onChange={handleChange} name='nombre' placeholder='Nombre'></input>

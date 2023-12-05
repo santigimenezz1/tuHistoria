@@ -16,7 +16,7 @@ const { default: TarjetaHistoria } = require("../TarjetaHistoria/TarjetaHistoria
 const { default: TarjetaFiltro } = require("../TarjetaFiltro/TarjetaFiltro")
 
 const LayoutHome = ()=>{
-  const {usuarioOn} = useContext(CreateContext)
+  const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
   const isUsuarioOnEmpty = Object.keys(usuarioOn).length === 0;
 
 

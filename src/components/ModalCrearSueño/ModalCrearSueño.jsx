@@ -26,6 +26,8 @@ import { useState } from 'react';
 import { db } from '@/firebaseConfig';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import Swal from 'sweetalert2';
+import { useContext } from 'react';
+import { CreateContext } from '@/Context/context';
 const StyledTextField = styled(TextField)({
   '& .MuiOutlinedInput-root': {
     border: '1px solid white',
@@ -53,47 +55,54 @@ export default function ModalCrearSueño() {
   const handleClose = () => setOpen(false);
   const [estadoCategoria, setEstadoCategoria] = useState([])
   const [estadoPublico, setEstadoPublico] = useState(false)
+  const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
+
 
   const { handleSubmit, handleChange } = useFormik({
     initialValues: {
       mensaje: ""
     },
-    onSubmit: (data) => {
+    onSubmit: async (data) => {
       const objeto = {
         mensaje: data,
         categorias: [...estadoCategoria],
         publico: estadoPublico,
         date: serverTimestamp(),
         comentarios: []
-      }
-      event.preventDefault();
-      setEstadoCategoria([])
-      // CREAR LA EN ORDEN FIREBASE
-         const ordersCollection = collection(db, "historias");
-         addDoc(ordersCollection, objeto)
-         handleClose()
-         Swal.fire({
+      };
+  
+      try {
+        // CREAR EN ORDEN EN FIREBASE
+        const ordersCollection = collection(db, "historias");
+        await addDoc(ordersCollection, objeto);
+  
+        handleClose();
+  
+        Swal.fire({
           position: "center",
           icon: "success",
-          title: "Historia agregada ! ",
+          title: "¡Historia agregada!",
           showConfirmButton: true,
           timer: 3500,
         });
-        
-        
-    
-        
+  
+        // Buscar y actualizar el usuario en la colección 'usuarios'
+        const usuariosCollection = collection(db, "usuarios");
+        const usuariosQuery = query(usuariosCollection, where("email", "==", usuarioOn.email));
+        const usuariosSnapshot = await getDocs(usuariosQuery);
+  
+        usuariosSnapshot.forEach(async (doc) => {
+          // Actualiza el documento existente con el nuevo objeto
+          await addDoc(collection(usuariosCollection, doc.id, "historias"), objeto);
+        });
+      } catch (error) {
+        console.error("Error al agregar historia o buscar usuarios:", error);
+      }
     },
-    validateOnChange: false      
-})
-
-
-
-
-
-
-
-
+    validateOnChange: false,
+  });
+        
+  console.log({usuarioOn})
 
   return (
     <div>

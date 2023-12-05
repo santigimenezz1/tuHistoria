@@ -29,7 +29,7 @@ export const login = async ({ email, password }) => {
   return res;
 };
 
-export const create = async ({ email, password }) => {
+export const create = async ( email, password ) => {
   const auth = getAuth();
 
   // Verificar si el correo electrónico ya existe
