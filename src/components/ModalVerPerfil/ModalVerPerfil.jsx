@@ -25,17 +25,19 @@ const style = {
   p: 4,
 };
 
-export default function ModalVerPerfil() {
+export default function ModalVerPerfil( {historia, data} ) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
+  console.log({historia})
   return (
     <div>
       <div onClick={()=>handleOpen()}>
       <div className='tarjetaHistoria__user'>
                 <img alt= "imagen"  src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
                 <div className='tarjetaHistoria__user__info'>
-                <h4>Santidev</h4>
+               <h4>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h4>
                 <h5>Hace 6 horas</h5>
                 </div>
             </div>

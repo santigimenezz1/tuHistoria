@@ -19,7 +19,7 @@ function TarjetaHistoriaHome ( {historia, text} ){
             <button className='tarjetaHistoria__detalle'>Detalle</button>
             </Link>
             <div className='tarjetaHistoria__perfil'>
-                <ModalVerPerfil />
+                <ModalVerPerfil historia={historia} />
             </div>
             <div className='tarjetaHistoria__botonClose'>
                

@@ -1,9 +1,11 @@
  import ModalVerPerfil from '../ModalVerPerfil/ModalVerPerfil'
 import '../TarjetaDetalle/tarjetaDetalle.css'
 const TarjetaDetalle = ( {data} ) =>{
+
+  console.log({data})
     return (
         <div className="tarjetaDetalle">
-         <ModalVerPerfil />
+         <ModalVerPerfil data={data} />
          <div className='tarjetaDetalle__info'>
            {
             data &&

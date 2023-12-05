@@ -119,8 +119,7 @@ export default function ModalCrearSueño() {
           console.error("Error al obtener usuario por email:", error);
         }
         
-      }
-      
+      } 
       catch (error) {
         console.error("Error al agregar historia o buscar usuarios:", error);
       }
