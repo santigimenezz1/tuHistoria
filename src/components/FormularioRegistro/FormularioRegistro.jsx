@@ -23,7 +23,8 @@ const FormularioRegistro = () => {
         onSubmit: async (data) => {
             const objeto = {
                 ...data,
-                historias: []
+                historias: [],
+                favoritos: []
             }
             create()
             try {

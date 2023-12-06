@@ -102,15 +102,10 @@ export default function ModalCrearSueño() {
           const querySnapshot = await getDocs(q);
         
           if (!querySnapshot.empty) {
-            // Assuming email is unique, so there should be only one document
             const userDocRef = querySnapshot.docs[0].ref;
-        
             const userData = querySnapshot.docs[0].data();
             console.log("Información del usuario:", userData);
-        
-            // Update only the "historias" array, preserving other data
             const updatedData = { ...userData, historias: [...userData.historias, objetoUser] };
-        
             await updateDoc(userDocRef, updatedData);
             console.log("Usuario actualizado con éxito:", updatedData);
           } else {
