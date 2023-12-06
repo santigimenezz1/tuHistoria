@@ -11,23 +11,15 @@ const MisSuenios = () => {
   const { usuarioOn } = useContext(CreateContext);
 
   useEffect(() => {
-    // Verifica que usuarioOn.email tenga un valor antes de realizar la consulta
     if (usuarioOn.email) {
-      // Crea la consulta q con el filtro por email
       const q = query(collection(db, 'usuarios'), where("email", "==", usuarioOn.email));
-
-      // Establece el suscriptor para obtener las historias en tiempo real
       const unsubscribe = onSnapshot(q, (snapshot) => {
         setHistorias(snapshot.docs[0]?.data().historias || []);
       });
-
-      // Limpia el suscriptor cuando el componente se desmonta
       return () => unsubscribe();
     }
   }, [usuarioOn.email]);
 
-  console.log( {historias} );
- 
   return (
     <div className='misSuenios'>
       <div className='misSuenios__text'>
@@ -35,9 +27,13 @@ const MisSuenios = () => {
         <h2>Cantidad de sueños: {historias.length}</h2>
       </div>
       {
+        historias.length > 0 ?
         historias.map((historia, index)=>(
           <TarjetaHistoria key={index} historia={historia} />
-        ))
+          
+          ))
+          :
+          <h1 className='titulo__sinTarjetas'>Todavia no agregaste ninguna historia :(</h1>
       }
     </div>
   );

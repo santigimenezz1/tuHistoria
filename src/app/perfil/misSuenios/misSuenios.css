@@ -41,6 +41,10 @@
     gap: 30px;
     width: 100%;
 }
+.titulo__sinTarjetas{
+ color: white;
+ letter-spacing: 1px;
+}
 
 @media screen and (max-width:1000px){
     .misSuenios__tarjetas{
