@@ -1,38 +1,47 @@
- 'use client'
-import { useState, useEffect } from 'react'; // Importa useState y useEffect
+ "use client"
+import { useState, useEffect, useContext } from 'react';
 import TarjetaHistoria from '@/components/TarjetaHistoria/TarjetaHistoria';
 import './misSuenios.css';
-import FondoDinamico from '@/components/FondoDinamico/FondoDinamico';
-import ModalEditarSueño from '@/components/ModalEditarSueño/ModalEditarSueño';
-import { collection, getDocs, onSnapshot } from 'firebase/firestore';
+import { collection, onSnapshot, query, where } from 'firebase/firestore';
 import { db } from '@/firebaseConfig';
+import { CreateContext } from '@/Context/context';
 
-const MisSuenios = ({ children }) => {
-  const [historias, setHistorias] = useState([]); // Estado para almacenar las historias
+const MisSuenios = () => {
+  const [historias, setHistorias] = useState([]);
+  const { usuarioOn } = useContext(CreateContext);
 
   useEffect(() => {
-    const unsubscribe = onSnapshot(collection(db, 'historias'), (snapshot) => {
-      // Actualiza el estado con los datos en tiempo real
-      setHistorias(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
-    });
+    // Verifica que usuarioOn.email tenga un valor antes de realizar la consulta
+    if (usuarioOn.email) {
+      // Crea la consulta q con el filtro por email
+      const q = query(collection(db, 'usuarios'), where("email", "==", usuarioOn.email));
 
-    // Limpia el suscriptor cuando el componente se desmonta
-    return () => unsubscribe();
-  }, []); // El segundo parámetro vacío significa que este efecto se ejecutará solo una vez al montar el componente
+      // Establece el suscriptor para obtener las historias en tiempo real
+      const unsubscribe = onSnapshot(q, (snapshot) => {
+        setHistorias(snapshot.docs[0]?.data().historias || []);
+      });
 
+      // Limpia el suscriptor cuando el componente se desmonta
+      return () => unsubscribe();
+    }
+  }, [usuarioOn.email]);
+
+  console.log( {historias} );
+ 
   return (
     <div className='misSuenios'>
       <div className='misSuenios__text'>
         <h1>Tus sueños</h1>
         <h2>Cantidad de sueños: {historias.length}</h2>
       </div>
-      <div className='misSuenios__tarjetas'>
-        {historias.map((historia, index) => (
+      {
+        historias.map((historia, index)=>(
           <TarjetaHistoria key={index} historia={historia} />
-        ))}
-      </div>
+        ))
+      }
     </div>
   );
-};
+        }
+      
 
 export default MisSuenios;

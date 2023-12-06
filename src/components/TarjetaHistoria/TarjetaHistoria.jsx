@@ -9,20 +9,21 @@ import ModalEliminarSueño from '../ModalEliminarSueño/ModalEliminarSueño'
 import { collection, deleteDoc } from 'firebase/firestore'
 import { db } from '@/firebaseConfig'
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import { CreateContext } from '@/Context/context'
+import { useContext } from 'react'
 
 
 
 
-function TarjetaHistoria ( {historia, text} ){
+function TarjetaHistoria ( {historia, text, index} ){
+    const { usuarioOn } = useContext(CreateContext);
+    
     
     return (
         <div className="tarjetaHistoria">
-            <Link href={`/detalle/${historia.id}`}>
             <button className='tarjetaHistoria__detalle'>Detalle</button>
-            </Link>
-            <div className='tarjetaHistoria__perfil'>
-                <ModalVerPerfil />
-            </div>
+            <ModalVerPerfil historia={historia} />
+            
             <div className='tarjetaHistoria__botonClose'>
                 <div className='tarjetaHistoria__buttons'>
                 <ModalEliminarSueño historia={historia} />
@@ -30,13 +31,9 @@ function TarjetaHistoria ( {historia, text} ){
                 </div>
             </div>
                 <div className='tarjetaHistoria__mensaje'>
-                    
-                  {
-                       historia &&
-                           <span>{historia.mensaje.mensaje}</span>
-                       }
+                    <span>{historia.mensaje.mensaje}</span>
+                 
                 </div>
-
         </div>
     )
 }

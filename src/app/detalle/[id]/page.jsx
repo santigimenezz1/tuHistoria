@@ -34,9 +34,15 @@ async function obtenerDetalle(params) {
         setData(updatedData);
       });
   
-      console.log({usuarioOn})
       return () => unsubscribe();
     }, [params.id]);
+
+
+
+
+
+
+    console.log({data})
     return (
         <div className="detalle">
         <div className='fondoDinamico'>

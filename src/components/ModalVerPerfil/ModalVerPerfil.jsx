@@ -12,6 +12,8 @@ import CloseIcon from '@mui/icons-material/Close';
 import Boton from '../Boton/Boton';
 import ContadorSueños from '../ContadorSueños/ContadorSueños';
 import ModalEnviarMensaje from './ModalEnviarMensaje/ModalEnviarMensaje';
+import { useContext } from 'react';
+import { CreateContext } from '@/Context/context';
 
 const style = {
   position: 'absolute',
@@ -29,6 +31,8 @@ export default function ModalVerPerfil( {historia, data} ) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { usuarioOn } = useContext(CreateContext);
+
 
   console.log({historia})
   return (
@@ -37,7 +41,13 @@ export default function ModalVerPerfil( {historia, data} ) {
       <div className='tarjetaHistoria__user'>
                 <img alt= "imagen"  src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
                 <div className='tarjetaHistoria__user__info'>
-               <h4>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h4>
+                  {
+                   historia &&  historia.user.usuarioOn.nombre ?
+                    <h4>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h4>
+                    :
+                    data && data.user.usuarioOn.nombre && 
+                    <h4>{data.user.usuarioOn.nombre} {data.user.usuarioOn.apellido}</h4>
+                  }
                 <h5>Hace 6 horas</h5>
                 </div>
             </div>

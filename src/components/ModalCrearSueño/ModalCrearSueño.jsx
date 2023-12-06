@@ -82,7 +82,7 @@ export default function ModalCrearSueño() {
       };
   
       try {
-        // CREAR EN ORDEN EN FIREBASE
+        // CREAR EN ORDEN EN FIREBASE historias
         const ordersCollection = collection(db, "historias");
         await addDoc(ordersCollection, objeto);
         handleClose();
@@ -94,6 +94,7 @@ export default function ModalCrearSueño() {
           timer: 3500,
         });
 
+                // CREAR EN ORDEN EN FIREBASE usuarios
 
         try {
           const userCollection = collection(db, "usuarios");
