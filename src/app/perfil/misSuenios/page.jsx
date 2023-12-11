@@ -26,15 +26,16 @@ const MisSuenios = () => {
         <h1>Tus sueños</h1>
         <h2>Cantidad de sueños: {historias.length}</h2>
       </div>
+      <div className='misSuenios__container__tarjetas'>
       {
         historias.length > 0 ?
         historias.map((historia, index)=>(
           <TarjetaHistoria key={index} historia={historia} />
-          
           ))
           :
           <h1 className='titulo__sinTarjetas'>Todavia no agregaste ninguna historia :(</h1>
       }
+      </div>
     </div>
   );
         }

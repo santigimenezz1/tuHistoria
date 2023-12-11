@@ -5,6 +5,7 @@ export const CreateContext = createContext()
 
 const ContextoGlobal = ( {children} )=>{
     const [usuarioOn, setUsuarioOn] = useState({})
+    const [category, setCategory] = useState([])
 
     let data = {
      usuarioOn,

@@ -10,10 +10,6 @@ import ModalEditarSueño from '../ModalEditarSueño/ModalEditarSueño';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { useState } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
-
-
-
-
 function TarjetaHistoriaHome ( {historia, text} ){
     const [heart, setHeart] = useState(false)
     return (

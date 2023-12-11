@@ -27,9 +27,17 @@ const Favoritos = ({ children }) => {
         <h2>Cantidad de sueños: {historias.length}</h2>
       </div>
       <div className='misSuenios__favoritos__tarjetas'>
-        {historias.map((historia, index) => (
+
+        <div className='misSuenios__container__tarjetas'>
+      {
+        historias.length > 0 ?
+        historias.map((historia, index)=>(
           <TarjetaHistoria key={index} historia={historia} />
-        ))}
+          ))
+          :
+          <h1 className='titulo__sinTarjetas'>Todavia no agregaste ninguna historia :(</h1>
+      }
+      </div>
       </div>
     </div>
   );
