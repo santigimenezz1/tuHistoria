@@ -34,7 +34,7 @@ export default function ModalVerPerfil( {historia, data} ) {
   const { usuarioOn } = useContext(CreateContext);
 
 
-  console.log({historia})
+  console.log(historia)
   return (
     <div>
       <div onClick={()=>handleOpen()}>
@@ -42,13 +42,13 @@ export default function ModalVerPerfil( {historia, data} ) {
                 <img alt= "imagen"  src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
                 <div className='tarjetaHistoria__user__info'>
                   {
-                   historia &&  historia.user.usuarioOn.nombre ?
-                    <h4>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h4>
+                   historia && historia.user?
+                   <h1>{historia.user.nombre} {usuarioOn.apellido}</h1>
                     :
                     data && data.user.usuarioOn.nombre && 
                     <h4>{data.user.usuarioOn.nombre} {data.user.usuarioOn.apellido}</h4>
                   }
-                <h5>Hace 6 horas</h5>
+                <h5>Hace 2 horas</h5>
                 </div>
             </div>
       </div>
