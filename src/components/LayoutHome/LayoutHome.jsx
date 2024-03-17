@@ -20,7 +20,6 @@ const LayoutHome = ()=>{
   const isUsuarioOnEmpty = Object.keys(usuarioOn).length === 0;
 
 
-  console.log({usuarioOn})
   useEffect(()=>{
 
   },[usuarioOn])

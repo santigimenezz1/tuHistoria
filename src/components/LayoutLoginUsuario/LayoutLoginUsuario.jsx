@@ -7,7 +7,6 @@ import FormularioRegistro from "../FormularioRegistro/FormularioRegistro"
 import FondoDinamico from "../FondoDinamico/FondoDinamico"
 const LayoutLoginUsuario = ()=>{
     const {usuarioOn} = useContext(CreateContext)
-    console.log({usuarioOn})
     return (
         <div className="loginUsuario">
             <div className='fondoDinamico'>

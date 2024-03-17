@@ -42,7 +42,6 @@ async function obtenerDetalle(params) {
 
 
 
-    console.log({data})
     return (
         <div className="detalle">
         <div className='fondoDinamico'>

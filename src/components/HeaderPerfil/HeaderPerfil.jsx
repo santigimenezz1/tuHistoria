@@ -10,7 +10,6 @@ import { CreateContext } from '@/Context/context'
 const HeaderPerfil = ()=>{
     const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
 
-    console.log({usuarioOn})
     return (
         <div className='container__headerPerfil'>
         <div className="headerPerfil">

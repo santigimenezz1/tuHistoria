@@ -2,7 +2,6 @@
 import '../TarjetaDetalle/tarjetaDetalle.css'
 const TarjetaDetalle = ( {data} ) =>{
 
-  console.log({data})
     return (
         <div className="tarjetaDetalle">
          <ModalVerPerfil data={data} />

@@ -66,7 +66,6 @@ const FormularioIniciarSesion = () => {
     validateOnChange: false,
   });
 
-  console.log(usuarioOn)
 
   return (
     <div className="formularioIniciarSesion">
