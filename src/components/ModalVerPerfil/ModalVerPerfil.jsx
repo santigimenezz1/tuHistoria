@@ -61,7 +61,7 @@ export default function ModalVerPerfil( {historia, data} ) {
           </div>
           <div className='container__modalEditar__Perfil'>
             <img alt="imagen" src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915236/tu%20historia/premium_photo-1687832783320-35671afbf484_ogghp1.jpg'></img>
-            <h1>Santiago gimenez</h1>
+            <h1>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h1>
             <h3>Se unio el 26/3/2022</h3>
           </div>
           <div>
