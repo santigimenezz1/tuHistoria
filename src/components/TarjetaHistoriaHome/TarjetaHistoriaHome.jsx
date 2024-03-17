@@ -12,12 +12,16 @@ import { useState } from 'react';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 function TarjetaHistoriaHome ( {historia, text} ){
     const [heart, setHeart] = useState(false)
+
+
+    console.log({historia})
     return (
         <div className="tarjetaHistoria">
                 <div>
             <Link href={`/detalle/${historia.id}`}>
             <button className='tarjetaHistoria__detalle'>Detalle</button>
             </Link>
+
                 </div>
                 <div className="heart">
                     
