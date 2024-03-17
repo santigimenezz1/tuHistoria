@@ -19,7 +19,6 @@ import { useState } from 'react';
 import { addDoc, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 import { db } from '@/firebaseConfig';
 import Swal from 'sweetalert2';
-
 const style = {
   position: 'absolute',
   top: '50%',
