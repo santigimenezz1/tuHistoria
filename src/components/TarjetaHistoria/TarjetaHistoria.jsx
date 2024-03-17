@@ -18,10 +18,15 @@ import { useContext } from 'react'
 function TarjetaHistoria ( {historia, text, index} ){
     const { usuarioOn } = useContext(CreateContext);
     
+
+
+    console.log({historia})
     
     return (
         <div className="tarjetaHistoria">
+            <Link href={`/detalle/${historia.id}`}>
             <button className='tarjetaHistoria__detalle'>Detalle</button>
+            </Link>
             <ModalVerPerfil historia={historia} />
             
             <div className='tarjetaHistoria__botonClose'>
