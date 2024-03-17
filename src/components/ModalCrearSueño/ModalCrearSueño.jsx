@@ -123,7 +123,6 @@ export default function ModalCrearSueño() {
     validateOnChange: false,
   });
         
-  console.log({usuarioOn})
 
   return (
     <div>

@@ -14,7 +14,6 @@ function TarjetaHistoriaHome ( {historia, text} ){
     const [heart, setHeart] = useState(false)
 
 
-    console.log({historia})
     return (
         <div className="tarjetaHistoria">
                 <div>

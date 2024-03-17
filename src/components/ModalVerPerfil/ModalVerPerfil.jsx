@@ -34,7 +34,6 @@ export default function ModalVerPerfil( {historia, data} ) {
   const { usuarioOn } = useContext(CreateContext);
 
 
-  console.log({historia})
   return (
     <div>
       <div onClick={()=>handleOpen()}>

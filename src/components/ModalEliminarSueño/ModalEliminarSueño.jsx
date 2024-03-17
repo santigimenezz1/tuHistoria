@@ -36,7 +36,6 @@ export default function ModalEliminarSueño( { historia, text} ) {
     handleClose()
 }
 
-console.log({historia})
  
   return (
     <div>
