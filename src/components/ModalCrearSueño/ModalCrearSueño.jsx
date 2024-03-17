@@ -123,7 +123,6 @@ export default function ModalCrearSueño() {
     validateOnChange: false,
   });
         
-
   return (
     <div>
       <div onClick={() => handleOpen()}>
