@@ -69,13 +69,13 @@ export default function ModalEditarSueño( {historia} ) {
       mensaje: ""
     },
     onSubmit: (data) => {
+      alert("esta funcionando")
       const objeto = {
-        mensaje: data,
+        mensaje: data.mensaje,
         categorias: [...estadoCategoria],
         publico: estadoPublico,
         date: serverTimestamp(),
       }
-      event.preventDefault();
       setEstadoCategoria([])
       // CREAR LA EN ORDEN FIREBASE
         const docRef = doc(db, "historias", historia.id);
@@ -137,7 +137,7 @@ export default function ModalEditarSueño( {historia} ) {
 <RadioGroup estadoPublico={estadoPublico} setEstadoPublico={setEstadoPublico} />
 </FormControl>
           <div className='container__buttonsForm'>
-            <Boton text={"cancelar"} />
+            <Boton  text={"cancelar"} />
             <Boton type={"submit"} text={"Editar"}  />
           </div>
           </form>

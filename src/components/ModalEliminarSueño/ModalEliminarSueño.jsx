@@ -22,6 +22,7 @@ export default function ModalEliminarSueño( { historia, text} ) {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+
   const eliminarHistoria = (historiaId)=>{
     const docRef = doc(db, "historias", historiaId)
     deleteDoc(docRef)
@@ -34,6 +35,8 @@ export default function ModalEliminarSueño( { historia, text} ) {
     });
     handleClose()
 }
+
+console.log({historia})
  
   return (
     <div>
