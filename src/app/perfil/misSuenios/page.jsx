@@ -20,6 +20,8 @@ const MisSuenios = () => {
     }
   }, [usuarioOn.email]);
 
+
+  console.log(historias)
   return (
     <div className='misSuenios'>
       <div className='misSuenios__text'>
