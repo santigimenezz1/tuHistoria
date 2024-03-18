@@ -17,15 +17,18 @@ const LayoutTarjetasHome = ()=>{
 
       return () => unsubscribe();
     }, []);
-
     return (
-        <>
+      <>
         {
-        historias.filter((historia)=>historia.publico === true).map((historia, index) => (
-          <TarjetaHistoriaHome  key={index} historia={historia} />
-        ))
+          historias
+            .filter((historia) => historia.publico === true && historia.date) // Filtrar historias públicas y asegurarse de que la propiedad date no sea null
+            .sort((a, b) => (b.date && a.date) ? b.date.seconds - a.date.seconds : 0) // Ordenar por fecha más reciente si date existe, de lo contrario, mantener el orden actual
+            .map((historia, index) => (
+              <TarjetaHistoriaHome key={index} historia={historia} />
+            ))
         }
-        </>
-    )
+      </>
+    );
+    
 }
 export default LayoutTarjetasHome
