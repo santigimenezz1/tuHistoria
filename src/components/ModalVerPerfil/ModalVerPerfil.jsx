@@ -44,8 +44,8 @@ export default function ModalVerPerfil( {historia, data} ) {
                 <img alt= "imagen"  src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915526/tu%20historia/150_a8exmv.jpg'></img>
                 <div className='tarjetaHistoria__user__info'>
                   {
-                    historia &&
-                <h4>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h4>
+                    historia && historia.user.usuarioOn &&   
+                <h4>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h4> //ACA ESTA EL ERROR 
                   }
                 <h5>Hace 2 horas</h5>
                 </div>
@@ -65,7 +65,7 @@ export default function ModalVerPerfil( {historia, data} ) {
             <img alt="imagen" src='https://res.cloudinary.com/dcf9eqqgt/image/upload/v1699915236/tu%20historia/premium_photo-1687832783320-35671afbf484_ogghp1.jpg'></img>
             {
               estadoHistoria &&
-            <h1>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h1>
+            <h1>{historia.user.usuarioOn.nombre} {historia.user.usuarioOn.apellido}</h1> //ACA ESTA EL ERROR 
             }
             <h3>Se unio el 26/3/2022</h3>
           </div>

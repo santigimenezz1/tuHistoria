@@ -65,20 +65,20 @@ export default function ModalCrearSueño() {
     },
     onSubmit: async (data) => {
       const objeto = {
+        user: {usuarioOn},
         mensaje: data,
         categorias: [...estadoCategoria],
         publico: estadoPublico,
         date: serverTimestamp(),
-        comentarios: [],
-        user: {usuarioOn}
+        comentarios: []
       };
 
       const objetoUser = {
+        user: {usuarioOn},
         mensaje: data,
         categorias: [...estadoCategoria],
         publico: estadoPublico,
-        comentarios: [],
-        user: {usuarioOn}
+        comentarios: []
       };
   
       try {
