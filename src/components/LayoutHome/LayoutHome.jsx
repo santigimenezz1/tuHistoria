@@ -6,7 +6,7 @@ import FiltrosBusqueda from "../FiltrosBusqueda/FiltrosBusqueda"
 import ModalPerfilResponsive from "../ModalPerfilResponsive/ModalPerfilResponsive"
 import ModalFiltroResponsive from "../ModalFiltroResponsive/ModalFiltroResponsive"
 import LayoutTarjetasHome from "../LayoutTarjetasHome/LayoutTarjetasHome"
-import { useContext, useEffect } from "react"
+import { useContext, useEffect, useState } from "react"
 import { CreateContext } from "@/Context/context"
 import LayoutLoginUsuario from "../LayoutLoginUsuario/LayoutLoginUsuario"
 
@@ -19,13 +19,22 @@ const LayoutHome = ()=>{
   const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
   const isUsuarioOnEmpty = Object.keys(usuarioOn).length === 0;
 
+  const [filtros, setFiltros] = useState([])
 
-  useEffect(()=>{
+  const agregarFiltro = (categoria) => {
+    if (filtros.includes(categoria)) {
+        const nuevoArreglo = filtros.filter((res) => res !== categoria);
+        setFiltros(nuevoArreglo);
+    } else {
+        setFiltros([...filtros, categoria]);
+    }
+};
 
-  },[usuarioOn])
+  const arregloFiltrado = () =>{
+    
+  }
     return (
       <>
-
       {
         Object.keys(usuarioOn).length === 0 ?
           <LayoutLoginUsuario />           
@@ -35,7 +44,7 @@ const LayoutHome = ()=>{
         <FondoDinamico />
     </div>
         <div className="container__filtroBusqueda">
-          <FiltrosBusqueda />
+          <FiltrosBusqueda setFiltros={setFiltros} filtros={filtros} agregarFiltro={agregarFiltro}/>
         </div>
         <div className="container__modalResponsive">
           <ModalFiltroResponsive />

@@ -6,10 +6,13 @@ export const CreateContext = createContext()
 const ContextoGlobal = ( {children} )=>{
     const [usuarioOn, setUsuarioOn] = useState({})
     const [category, setCategory] = useState([])
+    const [filtros, setFiltros] = useState([])
 
     let data = {
      usuarioOn,
-     setUsuarioOn
+     setUsuarioOn,
+     filtros,
+     setFiltros
     }
 
     return (

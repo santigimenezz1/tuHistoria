@@ -15,6 +15,8 @@ const LayoutTarjetasHome = ()=>{
         setHistorias(historia.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
       });
 
+
+
       return () => unsubscribe();
     }, []);
     return (
