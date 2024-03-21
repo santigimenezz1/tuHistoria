@@ -5,7 +5,7 @@ import './formularioRegistro.css'
 import Swal from 'sweetalert2'
 import { auth, create, db } from '@/firebaseConfig'
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import Loading from '../Loading/Loading'
 
@@ -13,6 +13,7 @@ const FormularioRegistro = () => {
     const [open, setOpen] = useState(false);
     const [estadoLoading, setEstadoLoading] = useState(false)
 
+    const formRef = useRef(null);
     const { handleChange, handleSubmit, errors, resetForm } = useFormik({
         initialValues: {
             nombre: "",
@@ -20,6 +21,7 @@ const FormularioRegistro = () => {
             email: "",
             password: ""
         },
+
         onSubmit: async (data) => {
             const objeto = {
                 ...data,
@@ -27,10 +29,23 @@ const FormularioRegistro = () => {
                 favoritos: []
             }
             create()
+
+           
             try {
                 const res = await createUserWithEmailAndPassword(auth, data.email, data.password);
                 await addDoc(collection(db, "usuarios"), objeto);
-                resetForm()
+                formRef.current.reset();
+                Swal.fire({
+                    position: "center",
+                    icon: "success",
+                    title: "Correo registrado correctamente!",
+                    showConfirmButton: true,
+                    timer: 4500,
+                    customClass: {
+                        container: "my-custom-alert", // Clase personalizada para la alerta
+                        backdrop: "my-custom-backdrop", // Clase personalizada para el fondo de la alerta
+                    },
+                });
             } catch (createError) {
                 const errorCode = createError.code;
 
@@ -56,7 +71,7 @@ const FormularioRegistro = () => {
     });
     return (
         <div className="formularioIniciarSesion">
-            <form onSubmit={handleSubmit} className='formulario__iniciarSesion'>
+            <form onSubmit={handleSubmit} className='formulario__iniciarSesion' ref={formRef}>
            
                 <h1>Registrate</h1>
                 <div className='inputs__formulario'>

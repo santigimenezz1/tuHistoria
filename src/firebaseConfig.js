@@ -8,6 +8,7 @@ import {
   sendPasswordResetEmail,
 } from "firebase/auth";
 import { v4 } from "uuid";
+import Swal from "sweetalert2";
 
 const firebaseConfig = {
     apiKey: "AIzaSyDd2xKwAziOJolMAeixkIPBWuWme048WeY",
