@@ -7,7 +7,7 @@ import TarjetaHistoriaHome from "../TarjetaHistoriaHome/TarjetaHistoriaHome";
 
 const { default: TarjetaHistoria } = require("../TarjetaHistoria/TarjetaHistoria")
 
-const LayoutTarjetasHome = ()=>{
+const LayoutTarjetasHome = ( {filtros} )=>{
     const [historias, setHistorias] = useState([]); // Estado para almacenar las historias
 
     useEffect(() => {
@@ -19,6 +19,9 @@ const LayoutTarjetasHome = ()=>{
 
       return () => unsubscribe();
     }, []);
+
+
+    alert(filtros)
     return (
       <>
         {
@@ -29,6 +32,7 @@ const LayoutTarjetasHome = ()=>{
               <TarjetaHistoriaHome key={index} historia={historia} />
             ))
         }
+       
       </>
     );
     

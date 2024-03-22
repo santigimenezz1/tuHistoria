@@ -18,7 +18,6 @@ const { default: TarjetaFiltro } = require("../TarjetaFiltro/TarjetaFiltro")
 const LayoutHome = ()=>{
   const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
   const isUsuarioOnEmpty = Object.keys(usuarioOn).length === 0;
-
   const [filtros, setFiltros] = useState([])
 
   const agregarFiltro = (categoria) => {
@@ -32,7 +31,7 @@ const LayoutHome = ()=>{
 };
 
   const arregloFiltrado = () =>{
-
+      
   }
     return (
       <>
