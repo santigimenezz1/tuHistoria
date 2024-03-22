@@ -5,10 +5,17 @@ import ContextoGlobal from '@/Context/context'
 const TarjetaFiltro = ( {estadoCategoria, setEstadoCategoria, text ,setFiltros, filtros, agregarFiltro = () =>console.log("solucion momentanea al error")} )=>{
 
 
+    const handleClick = () => {
+        // Verificar si el valor ya está en estadoCategoria
+        if (!estadoCategoria.includes(text)) {  //si no existe 
+          // Si no está, agregarlo al estadoCategoria
+          setEstadoCategoria(prevState => [...prevState, text]); // AGREGALO, SINO NO HAGAS NADA. SE VA A CREAR EL ARREGLO VACIO 
+        }
+      };
  return (
     <div className='container__Filtro' >
    
-  <label class="checkbox">
+   <label onClick={() => handleClick()} className="checkbox">
     <input type="checkbox" />
     <svg viewBox="0 0 21 18">
         <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 18" id="tick-path">

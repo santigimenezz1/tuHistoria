@@ -58,6 +58,8 @@ export default function ModalCrearSueño() {
   const [estadoPublico, setEstadoPublico] = useState(false)
   const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
 
+  
+
 
   const { handleSubmit, handleChange } = useFormik({
     initialValues: {
@@ -93,6 +95,7 @@ export default function ModalCrearSueño() {
           showConfirmButton: true,
           timer: 3500,
         });
+        setEstadoCategoria([])
 
                 // CREAR EN ORDEN EN FIREBASE usuarios
 
@@ -122,6 +125,9 @@ export default function ModalCrearSueño() {
     },
     validateOnChange: false,
   });
+
+
+  console.log(estadoCategoria)
         
   return (
     <div>

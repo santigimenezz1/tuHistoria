@@ -1,0 +1,28 @@
+
+.filtroBusqueda{
+    height: 100%;
+    width: 200px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;  
+  }
+  .filtroBusqueda__tarjetas{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .filtroBusqueda button{
+    width: 100px;
+    height: 35px;
+    border-radius: 4px;
+    border: none;
+    background-color: purple;
+    color: white;
+    cursor: pointer;
+    transition: all .2s;
+  }
+  .filtroBusqueda button:hover{
+    background-color: rgb(157, 8, 157); 
+  }
