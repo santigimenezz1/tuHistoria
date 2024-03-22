@@ -21,7 +21,6 @@ const LayoutTarjetasHome = ( {filtros} )=>{
     }, []);
 
 
-    alert(filtros)
     return (
       <>
         {
