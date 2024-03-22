@@ -10,7 +10,7 @@ const TarjetaFiltro = ( {text, setEstadoCategoria, estadoCategoria, setFiltros, 
     <div className='container__Filtro' >
    
   <label class="checkbox">
-    <input onClick={()=>agregarFiltro(text)} type="checkbox" />
+    <input type="checkbox" />
     <svg viewBox="0 0 21 18">
         <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 18" id="tick-path">
             <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.25" fill="none" d="M5.22003 7.26C5.72003 7.76 7.57 9.7 8.67 11.45C12.2 6.05 15.65 3.5 19.19 1.69"></path>

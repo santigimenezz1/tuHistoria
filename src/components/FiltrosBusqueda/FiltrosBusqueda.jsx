@@ -18,7 +18,7 @@ const FiltrosBusqueda = ( {setFiltros, filtros, agregarFiltro} )=>{
         <TarjetaFiltro text={"Era otra persona"}  setFiltros={setFiltros} filtros={filtros} agregarFiltro={agregarFiltro}/>
         <TarjetaFiltro text={"Me peleaba"}  setFiltros={setFiltros} filtros={filtros} agregarFiltro={agregarFiltro} />
         </div>
-        <button>Aplicar</button>
+        <button onClick={()=>console.log({filtros})}>Aplicar</button>
         </div>
     )
 }

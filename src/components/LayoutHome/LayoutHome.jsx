@@ -27,11 +27,12 @@ const LayoutHome = ()=>{
         setFiltros(nuevoArreglo);
     } else {
         setFiltros([...filtros, categoria]);
+
     }
 };
 
   const arregloFiltrado = () =>{
-    
+
   }
     return (
       <>
