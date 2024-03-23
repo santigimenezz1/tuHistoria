@@ -28,7 +28,6 @@ const LayoutTarjetasHome = ( {filtros, filtrosHome} )=>{
     }, []);
 
 
-    console.log({copyHistorias})
     return (
       <>
      

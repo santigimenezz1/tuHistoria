@@ -13,11 +13,16 @@ const FiltrosBusquedaHome = ( {filtrosHome, setFiltrosHome} )=>{
 
 
    
-    const agregarFiltroHome = (text) =>{
-        if(!filtrosHome.includes(text)){
-            setFiltrosHome([...filtrosHome, text])
+    const agregarFiltroHome = (text) => {
+        if (!filtrosHome.includes(text)) {
+            // Si el texto no está en el arreglo, lo agregamos
+            setFiltrosHome([...filtrosHome, text]);
+        } else {
+            // Si el texto ya está en el arreglo, lo eliminamos
+            setFiltrosHome(filtrosHome.filter((filtro) => filtro !== text));
         }
-    }
+    };
+    
 
     const test = () => {
         setCopyHistorias("estado cambiado")
@@ -35,7 +40,7 @@ const FiltrosBusquedaHome = ( {filtrosHome, setFiltrosHome} )=>{
   
 
  
-      console.log({copyHistorias})
+      console.log({filtrosHome})
 
     return (
         <div className='filtroBusqueda'>
