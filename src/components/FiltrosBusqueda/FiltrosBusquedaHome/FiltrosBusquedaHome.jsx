@@ -7,6 +7,10 @@ import { CreateContext } from '@/Context/context';
 const FiltrosBusquedaHome = ( {filtrosHome, setFiltrosHome} )=>{
 
     const { historias, setHistorias } = useContext(CreateContext);
+    const { copyHistorias, setCopyHistorias } = useContext(CreateContext);
+
+
+
 
    
     const agregarFiltroHome = (text) =>{
@@ -15,36 +19,43 @@ const FiltrosBusquedaHome = ( {filtrosHome, setFiltrosHome} )=>{
         }
     }
 
+    const test = () => {
+        setCopyHistorias("estado cambiado")
+    }
+
     const arregloFiltrado = (filtrosHome, historias) => {
         const arr = historias.filter((historia) => {
           // Verificar si alguna categoria de la historia está incluida en filtros
           return  historia.categorias.some((categoria) => filtrosHome.includes(categoria));
         });
-        setHistorias(arr) ;
+        setCopyHistorias(arr) ;
       };
 
 
   
 
  
-      console.log({historias})
-      console.log({filtrosHome})
+      console.log({copyHistorias})
 
     return (
         <div className='filtroBusqueda'>
         <h1>Filtros</h1>
         <div className='filtroBusqueda__tarjetas'>
-        <TarjetaFiltroHome text={"Caía"} agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Me perseguían"}agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Me moría"}agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Con un fantasma"}agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Ovinis"}agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Extraterrestes"}agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Volaba"}agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Era otra persona"}agregarFiltroHome={agregarFiltroHome}/>
-        <TarjetaFiltroHome text={"Me peleaba"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Caía"} agregarFiltroHome={agregarFiltroHome} /> 
+        <TarjetaFiltroHome text={"Me perseguían"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Me moría"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Con un fantasma"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Ovinis"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Extraterrestes"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Volaba"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Era otra persona"}agregarFiltroHome={agregarFiltroHome} />
+        <TarjetaFiltroHome text={"Me peleaba"}agregarFiltroHome={agregarFiltroHome}  />
         </div>
+        <div className='filtroBusqueda__botones'>
         <button onClick={()=>arregloFiltrado(filtrosHome, historias)}>Aplicar</button>
+        <button onClick={()=>setCopyHistorias([])}>Reset</button>
+        </div>
+
         </div>
     )
 }

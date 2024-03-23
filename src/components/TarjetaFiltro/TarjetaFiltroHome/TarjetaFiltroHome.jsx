@@ -1,7 +1,7 @@
 "use client"
 import { createContext, useContext } from 'react'
 import ContextoGlobal from '@/Context/context'
-const TarjetaFiltroHome = ( {text, agregarFiltroHome} )=>{
+const TarjetaFiltroHome = ( {text, agregarFiltroHome, copyHistorias} )=>{
  return (
     <div className='container__Filtro' >
    

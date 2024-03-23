@@ -26,3 +26,7 @@
   .filtroBusqueda button:hover{
     background-color: rgb(157, 8, 157); 
   }
+  .filtroBusqueda__botones{
+    display: flex;
+    gap: 5px;
+  }
