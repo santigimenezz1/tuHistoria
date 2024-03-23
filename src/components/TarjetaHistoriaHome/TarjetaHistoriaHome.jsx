@@ -13,6 +13,15 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 function TarjetaHistoriaHome ( {historia, text} ){
     const [heart, setHeart] = useState(false)
 
+    const heartActivado = () => {
+        setHeart(true)
+        alert("TARJETA AGRAGADA A FAVORITOS")
+    }
+
+    const heartDesactivado = () => {
+        setHeart(false)
+        alert("TARJETA ELIMINADA DE FAVORITOS")
+    }
 
     return (
         <div className="tarjetaHistoria">
@@ -26,11 +35,11 @@ function TarjetaHistoriaHome ( {historia, text} ){
                     
                     {
                         !heart ?
-                        <div onClick={()=>setHeart(true)}>
+                        <div onClick={()=>heartActivado()}>
                             <FavoriteBorderIcon style={{color:"white"}} />    
                          </div>
                         :
-                        <div onClick={()=>setHeart(false)}>
+                        <div onClick={()=>heartDesactivado(false)}>
                             <FavoriteIcon style={{color:"white"}} />
                         </div>
 
