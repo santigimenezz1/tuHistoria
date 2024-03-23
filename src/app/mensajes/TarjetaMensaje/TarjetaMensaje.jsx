@@ -19,7 +19,7 @@ const TarjetaMensaje = ({ comentario }) => {
             <div className='tarjetaMensaje__texto'>
                 {
                     comentario &&
-                <h1>{comentario.texto}</h1>
+                <h1 style={{fontSize:"16px"}}>{comentario.texto}</h1>
                 }
             </div>
         </div>
