@@ -9,6 +9,8 @@ const ContextoGlobal = ( {children} )=>{
     const [historias, setHistorias] = useState([])
     const [category, setCategory] = useState([])
     const [filtros, setFiltros] = useState([])
+    const [filtrosHome, setFiltrosHome] = useState([])
+
 
 
     let data = {
@@ -19,7 +21,9 @@ const ContextoGlobal = ( {children} )=>{
      filtros,
      setFiltros,
      copyHistorias,
-     setCopyHistorias
+     setCopyHistorias,
+     filtrosHome,
+     setFiltrosHome
     }
 
     return (

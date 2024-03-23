@@ -4,10 +4,12 @@ import TarjetaFiltroHome from '@/components/TarjetaFiltro/TarjetaFiltroHome/Tarj
 import { useContext, useState } from 'react';
 import { CreateContext } from '@/Context/context';
 
-const FiltrosBusquedaHome = ( {filtrosHome, setFiltrosHome} )=>{
+const FiltrosBusquedaHome = ()=>{
 
     const { historias, setHistorias } = useContext(CreateContext);
     const { copyHistorias, setCopyHistorias } = useContext(CreateContext);
+    const {filtrosHome, setFiltrosHome} = useContext(CreateContext)
+
 
 
 
@@ -17,10 +19,7 @@ const FiltrosBusquedaHome = ( {filtrosHome, setFiltrosHome} )=>{
         if (!filtrosHome.includes(text)) {
             // Si el texto no está en el arreglo, lo agregamos
             setFiltrosHome([...filtrosHome, text]);
-        } else {
-            // Si el texto ya está en el arreglo, lo eliminamos
-            setFiltrosHome(filtrosHome.filter((filtro) => filtro !== text));
-        }
+        } 
     };
     
 
@@ -41,6 +40,7 @@ const FiltrosBusquedaHome = ( {filtrosHome, setFiltrosHome} )=>{
 
  
       console.log({filtrosHome})
+      console.log({copyHistorias})
 
     return (
         <div className='filtroBusqueda'>

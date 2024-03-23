@@ -20,7 +20,7 @@ const LayoutHome = ()=>{
   const {usuarioOn, setUsuarioOn} = useContext(CreateContext)
   const isUsuarioOnEmpty = Object.keys(usuarioOn).length === 0;
   const [filtros, setFiltros] = useState([])
-  const [filtrosHome, setFiltrosHome] = useState([])
+  const {filtrosHome, setFiltrosHome} = useContext(CreateContext)
 
 
   
@@ -37,7 +37,7 @@ const LayoutHome = ()=>{
         <FondoDinamico />
     </div>
         <div className="container__filtroBusqueda">
-          <FiltrosBusquedaHome filtrosHome={filtrosHome} setFiltrosHome={setFiltrosHome} />
+          <FiltrosBusquedaHome  />
         </div>
         <div className="container__modalResponsive">
           <ModalFiltroResponsive />
@@ -45,7 +45,7 @@ const LayoutHome = ()=>{
         </div>
   <div className='home__tarjetas'>
   <ModalCrearSueño />
-   <LayoutTarjetasHome filtrosHome={filtrosHome} />
+   <LayoutTarjetasHome />
   </div>
   <div className='home__user'>
     <div className="container__usuario">
